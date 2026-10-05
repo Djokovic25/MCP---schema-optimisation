@@ -1,0 +1,28 @@
+{
+  "name": "zentrax_lookup",
+  "description": "Searches the Zentrax knowledge index using a query and retrieval mode.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "The search text used to find matching records."
+      },
+      "mode": {
+        "type": "string",
+        "enum": ["m7", "m8", "m9"],
+        "description": "Controls which retrieval mode is used."
+      },
+      "limit": {
+        "type": "integer",
+        "description": "Maximum number of records to return."
+      },
+      "include_meta": {
+        "type": "boolean",
+        "description": "Whether metadata should be included in the results."
+      }
+    },
+    "required": ["query", "mode"],
+    "additionalProperties": false
+  }
+}

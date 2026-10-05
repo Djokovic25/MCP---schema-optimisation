@@ -1,0 +1,6 @@
+python-dotenv
+requests
+jsonschema
+pandas
+pyyaml
+google-genai

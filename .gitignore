@@ -1,0 +1,14 @@
+.env
+__pycache__/
+*.pyc
+
+results/
+*.log
+
+.venv/
+venv/
+
+.DS_Store
+.ipynb_checkpoints/
+
+mcp-env/

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "T1",
+    "description": "Search for records about authentication failures using retrieval mode m7.",
+    "expected_arguments": {
+      "query": "authentication failures",
+      "mode": "m7"
+    }
+  },
+  {
+    "id": "T2",
+    "description": "Search for records about authentication failures using retrieval mode m7 and return at most 20 records.",
+    "expected_arguments": {
+      "query": "authentication failures",
+      "mode": "m7",
+      "limit": 20
+    }
+  },
+  {
+    "id": "T3",
+    "description": "Search for records about authentication failures using retrieval mode m7 and include metadata in the results.",
+    "expected_arguments": {
+      "query": "authentication failures",
+      "mode": "m7",
+      "include_meta": true
+    }
+  }
+]
