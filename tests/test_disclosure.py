@@ -52,3 +52,183 @@ def test_invalid_condition():
         assert False, "Expected ValueError"
     except ValueError:
         pass
+
+from src.schemas.disclosure import build_ablation
+
+
+def test_remove_tool_description():
+
+    schema = {
+        "name": "test_tool",
+        "description": "Tool description",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Query text"
+                }
+            }
+        }
+    }
+
+    result = build_ablation(
+        schema,
+        ["tool_description"],
+    )
+
+    assert "description" not in result
+    assert result["name"] == "test_tool"
+    assert "description" in result["parameters"]["properties"]["query"]
+
+
+def test_remove_parameter_description():
+
+    schema = {
+        "name": "test_tool",
+        "description": "Tool description",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Query text"
+                }
+            }
+        }
+    }
+
+    result = build_ablation(
+        schema,
+        ["parameter_description"],
+    )
+
+    parameter = result["parameters"]["properties"]["query"]
+
+    assert "description" not in parameter
+    assert parameter["type"] == "string"
+
+
+def test_remove_type():
+
+    schema = {
+        "name": "test_tool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+
+    result = build_ablation(
+        schema,
+        ["type"],
+    )
+
+    assert "type" not in result["parameters"]["properties"]["query"]
+
+
+def test_remove_enum():
+
+    schema = {
+        "name": "test_tool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "enum": ["open", "closed"]
+                }
+            }
+        }
+    }
+
+    result = build_ablation(
+        schema,
+        ["enum"],
+    )
+
+    parameter = result["parameters"]["properties"]["status"]
+
+    assert "enum" not in parameter
+    assert parameter["type"] == "string"
+
+
+def test_remove_constraints():
+
+    schema = {
+        "name": "test_tool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100
+                }
+            }
+        }
+    }
+
+    result = build_ablation(
+        schema,
+        ["constraints"],
+    )
+
+    parameter = result["parameters"]["properties"]["limit"]
+
+    assert parameter["type"] == "integer"
+    assert "minimum" not in parameter
+    assert "maximum" not in parameter
+
+
+def test_remove_required():
+
+    schema = {
+        "name": "test_tool",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string"
+                }
+            },
+            "required": ["query"]
+        }
+    }
+
+    result = build_ablation(
+        schema,
+        ["required"],
+    )
+
+    assert "required" not in result["parameters"]
+
+
+def test_ablation_does_not_modify_original():
+
+    schema = {
+        "name": "test_tool",
+        "description": "Tool description",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Query text"
+                }
+            }
+        }
+    }
+
+    build_ablation(
+        schema,
+        ["tool_description", "parameter_description", "type"],
+    )
+
+    assert schema["description"] == "Tool description"
+    assert schema["parameters"]["properties"]["query"]["type"] == "string"
+    assert "description" in schema["parameters"]["properties"]["query"]

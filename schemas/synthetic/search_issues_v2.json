@@ -1,0 +1,65 @@
+{
+  "name": "search_issues",
+  "description": "Search and filter issues using text, workflow state, ownership, labels, creation time, sorting, result limits, and comment options.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "q": {
+        "type": "string",
+        "description": "Text to search for in issue titles and descriptions."
+      },
+      "state": {
+        "type": "string",
+        "description": "Current workflow state of the issue.",
+        "enum": [
+          "open",
+          "in_progress",
+          "closed"
+        ]
+      },
+      "assignee": {
+        "type": "string",
+        "description": "Username of the person currently assigned to the issue."
+      },
+      "labels": {
+        "type": "array",
+        "description": "Labels that the issue must contain.",
+        "items": {
+          "type": "string"
+        }
+      },
+      "created_after": {
+        "type": "string",
+        "description": "Only include issues created after this timestamp. Use ISO-8601 format."
+      },
+      "created_before": {
+        "type": "string",
+        "description": "Only include issues created before this timestamp. Use ISO-8601 format."
+      },
+      "sort": {
+        "type": "string",
+        "description": "Order in which matching issues should be returned.",
+        "enum": [
+          "created_asc",
+          "created_desc",
+          "updated_asc",
+          "updated_desc"
+        ]
+      },
+      "limit": {
+        "type": "integer",
+        "description": "Maximum number of issues to return in this response.",
+        "minimum": 1,
+        "maximum": 100
+      },
+      "with_comments": {
+        "type": "boolean",
+        "description": "Whether comments associated with matching issues should be included."
+      }
+    },
+    "required": [
+      "q"
+    ],
+    "additionalProperties": false
+  }
+}

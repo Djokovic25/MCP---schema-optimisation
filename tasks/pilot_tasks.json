@@ -1,28 +1,43 @@
 [
   {
     "id": "T1",
-    "description": "Search for records about authentication failures using retrieval mode m7.",
+    "description": "Search for issues using query value: authentication failures.",
     "expected_arguments": {
-      "query": "authentication failures",
-      "mode": "m7"
+      "query": "authentication failures"
     }
   },
   {
     "id": "T2",
-    "description": "Search for records about authentication failures using retrieval mode m7 and return at most 20 records.",
+    "description": "Search for issues using query value: authentication failures. Set status to open.",
     "expected_arguments": {
       "query": "authentication failures",
-      "mode": "m7",
-      "limit": 20
+      "status": "open"
     }
   },
   {
     "id": "T3",
-    "description": "Search for records about authentication failures using retrieval mode m7 and include metadata in the results.",
+    "description": "Search for issues using query value: authentication failures. Set maximum results to 20.",
     "expected_arguments": {
       "query": "authentication failures",
-      "mode": "m7",
-      "include_meta": true
+      "max_results": 20
+    }
+  },
+  {
+    "id": "T4",
+    "description": "Search for issues using query value: authentication failures. Include comments.",
+    "expected_arguments": {
+      "query": "authentication failures",
+      "include_comments": true
+    }
+  },
+  {
+    "id": "T5",
+    "description": "Search for issues using query value: authentication failures. Set status to closed, maximum results to 20, and include comments.",
+    "expected_arguments": {
+      "query": "authentication failures",
+      "status": "closed",
+      "max_results": 20,
+      "include_comments": true
     }
   }
 ]

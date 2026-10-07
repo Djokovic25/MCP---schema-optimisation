@@ -1,0 +1,257 @@
+[
+  {
+    "id": "E1",
+    "difficulty": "easy",
+    "category": "single_parameter",
+    "description": "Find AUTH_FAILURES issues.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "schema_dependencies": [
+      "parameter_description"
+    ]
+  },
+  {
+    "id": "E2",
+    "difficulty": "easy",
+    "category": "enum",
+    "description": "Find AUTH_FAILURES issues that are currently open.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ]
+  },
+  {
+    "id": "E3",
+    "difficulty": "easy",
+    "category": "assignee",
+    "description": "Find AUTH_FAILURES issues assigned to alice.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "assignee": "alice"
+    },
+    "schema_dependencies": [
+      "parameter_description"
+    ]
+  },
+  {
+    "id": "E4",
+    "difficulty": "easy",
+    "category": "boolean",
+    "description": "Find AUTH_FAILURES issues and include their comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ]
+  },
+  {
+    "id": "E5",
+    "difficulty": "easy",
+    "category": "numeric_limit",
+    "description": "Find AUTH_FAILURES issues and return at most 20 results.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "limit": 20
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ]
+  },
+  {
+    "id": "M1",
+    "difficulty": "medium",
+    "category": "multi_parameter",
+    "description": "Find open AUTH_FAILURES issues assigned to alice.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open",
+      "assignee": "alice"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ]
+  },
+  {
+    "id": "M2",
+    "difficulty": "medium",
+    "category": "mixed_types",
+    "description": "Find closed AUTH_FAILURES issues, return at most 20 results, and include their comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "limit": 20,
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type"
+    ]
+  },
+  {
+    "id": "M3",
+    "difficulty": "medium",
+    "category": "array",
+    "description": "Find AUTH_FAILURES issues labelled both security and backend.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "labels": [
+        "security",
+        "backend"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ]
+  },
+  {
+    "id": "M4",
+    "difficulty": "medium",
+    "category": "sorting",
+    "description": "Find AUTH_FAILURES issues and show the newest issues first.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ]
+  },
+  {
+    "id": "M5",
+    "difficulty": "medium",
+    "category": "multi_parameter",
+    "description": "Find open AUTH_FAILURES issues assigned to alice, show the newest issues first, and return at most 20 results.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open",
+      "assignee": "alice",
+      "sort": "created_desc",
+      "limit": 20
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type"
+    ]
+  },
+  {
+    "id": "H1",
+    "difficulty": "hard",
+    "category": "temporal_filtering",
+    "description": "Find AUTH_FAILURES issues created after January 1, 2026 and before February 1, 2026.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ]
+  },
+  {
+    "id": "H2",
+    "difficulty": "hard",
+    "category": "multi_filter",
+    "description": "Find open AUTH_FAILURES issues assigned to alice with the security label, created after January 1, 2026 and before February 1, 2026, and return at most 20 results.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open",
+      "assignee": "alice",
+      "labels": [
+        "security"
+      ],
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "limit": 20
+    },
+    "acceptable_arguments": [
+      {
+        "q": "AUTH_FAILURES",
+        "state": "open",
+        "assignee": "alice",
+        "labels": [
+          "security"
+        ],
+        "created_after": "2026-01-01T00:00:00Z",
+        "created_before": "2026-02-01T00:00:00Z",
+        "limit": 20
+      },
+      {
+        "q": "AUTH_FAILURES",
+        "state": "open",
+        "assignee": "alice",
+        "labels": [
+          "security"
+        ],
+        "created_after": "2026-01-01T00:00:00Z",
+        "created_before": "2026-01-31T23:59:59Z",
+        "limit": 20
+      }
+    ],
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type"
+    ]
+  },
+  {
+    "id": "H3",
+    "difficulty": "hard",
+    "category": "semantic_enum",
+    "description": "Find AUTH_FAILURES issues and show the oldest issues first.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ]
+  },
+  {
+    "id": "H4",
+    "difficulty": "hard",
+    "category": "mixed_complexity",
+    "description": "Find closed AUTH_FAILURES issues, show the newest issues first, include comments, and return 50 results.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "sort": "created_desc",
+      "with_comments": true,
+      "limit": 50
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type"
+    ]
+  },
+  {
+    "id": "H5",
+    "difficulty": "hard",
+    "category": "description_dependent",
+    "description": "Search issue titles and descriptions for the term AUTH_FAILURES, for issues assigned to alice, and include comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "assignee": "alice",
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description"
+    ]
+  }
+]

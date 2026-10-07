@@ -1,0 +1,30 @@
+{
+  "name": "search_issues",
+  "description": "Search issues using text, status, and result-count filters.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "Text to search for in issue titles and descriptions."
+      },
+      "status": {
+        "type": "string",
+        "description": "Filter issues by their current workflow status.",
+        "enum": ["open", "in_progress", "closed"]
+      },
+      "max_results": {
+        "type": "integer",
+        "description": "Maximum number of issues to return.",
+        "minimum": 1,
+        "maximum": 100
+      },
+      "include_comments": {
+        "type": "boolean",
+        "description": "Whether issue comments should be included in the results."
+      }
+    },
+    "required": ["query"],
+    "additionalProperties": false
+  }
+}

@@ -1,30 +1,47 @@
 from src.schemas.task_loader import load_tasks
 
 
-def test_load_pilot_tasks():
+def test_load_schema_ablation_tasks():
 
-    tasks = load_tasks("tasks/pilot_tasks.json")
+    tasks = load_tasks(
+        "tasks/schema_ablation_tasks.json"
+    )
 
-    assert len(tasks) == 3
-
-    assert tasks[0]["id"] == "T1"
-    assert tasks[1]["id"] == "T2"
-    assert tasks[2]["id"] == "T3"
+    assert len(tasks) == 5
 
 
 def test_task_expected_arguments():
 
-    tasks = load_tasks("tasks/pilot_tasks.json")
+    tasks = load_tasks(
+        "tasks/schema_ablation_tasks.json"
+    )
 
-    t1 = tasks[0]
-    t2 = tasks[1]
-    t3 = tasks[2]
-
-    assert t1["expected_arguments"] == {
-        "query": "authentication failures",
-        "mode": "m7"
+    assert tasks[0]["expected_arguments"] == {
+        "query": "AUTH_FAILURES"
     }
 
-    assert t2["expected_arguments"]["limit"] == 20
+    assert tasks[1]["id"] == "T2"
+    assert tasks[1]["expected_arguments"] == {
+        "query": "AUTH_FAILURES",
+        "status": "open"
+    }
 
-    assert t3["expected_arguments"]["include_meta"] is True
+    assert tasks[2]["id"] == "T3"
+    assert tasks[2]["expected_arguments"] == {
+        "query": "AUTH_FAILURES",
+        "max_results": 20
+    }
+
+    assert tasks[3]["id"] == "T4"
+    assert tasks[3]["expected_arguments"] == {
+        "query": "AUTH_FAILURES",
+        "include_comments": True
+    }
+
+    assert tasks[4]["id"] == "T5"
+    assert tasks[4]["expected_arguments"] == {
+        "query": "AUTH_FAILURES",
+        "status": "closed",
+        "max_results": 20,
+        "include_comments": True
+    }

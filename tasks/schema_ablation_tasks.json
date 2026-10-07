@@ -1,0 +1,43 @@
+[
+  {
+    "id": "T1",
+    "description": "Find AUTH_FAILURES issues.",
+    "expected_arguments": {
+      "query": "AUTH_FAILURES"
+    }
+  },
+  {
+    "id": "T2",
+    "description": "Find AUTH_FAILURES issues that are currently open.",
+    "expected_arguments": {
+      "query": "AUTH_FAILURES",
+      "status": "open"
+    }
+  },
+  {
+    "id": "T3",
+    "description": "Find AUTH_FAILURES issues and return at most 20 results.",
+    "expected_arguments": {
+      "query": "AUTH_FAILURES",
+      "max_results": 20
+    }
+  },
+  {
+    "id": "T4",
+    "description": "Find AUTH_FAILURES issues and include their comments.",
+    "expected_arguments": {
+      "query": "AUTH_FAILURES",
+      "include_comments": true
+    }
+  },
+  {
+    "id": "T5",
+    "description": "Find closed AUTH_FAILURES issues, return at most 20 results, and include their comments.",
+    "expected_arguments": {
+      "query": "AUTH_FAILURES",
+      "status": "closed",
+      "max_results": 20,
+      "include_comments": true
+    }
+  }
+]

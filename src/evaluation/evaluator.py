@@ -1,13 +1,11 @@
-import json
 from dataclasses import dataclass
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, List
 
 from jsonschema import ValidationError, validate
 
 
 @dataclass
 class EvaluationResult:
-    json_valid: bool
     tool_correct: bool
     schema_valid: bool
     arguments_correct: bool
@@ -16,64 +14,33 @@ class EvaluationResult:
 
 
 def evaluate_response(
-    raw_response: str,
+    function_name: Optional[str],
+    arguments: Optional[Dict[str, Any]],
     tool_schema: Dict[str, Any],
     expected_arguments: Dict[str, Any],
     expected_tool: str,
+    acceptable_arguments: Optional[List[Dict[str, Any]]] = None,
 ) -> EvaluationResult:
 
     # ---------------------------------------------------------
-    # 1. JSON validity
+    # 1. Check whether the model returned a function call
     # ---------------------------------------------------------
-
-    try:
-        response = json.loads(raw_response)
-    except (json.JSONDecodeError, TypeError):
+    if function_name is None:
         return EvaluationResult(
-            json_valid=False,
             tool_correct=False,
             schema_valid=False,
             arguments_correct=False,
             task_success=False,
-            failure_type="invalid_json",
+            failure_type="no_function_call",
         )
 
     # ---------------------------------------------------------
-    # 2. Basic response structure
+    # 2. Check whether the correct tool was selected
     # ---------------------------------------------------------
-
-    if not isinstance(response, dict):
-        return EvaluationResult(
-            json_valid=True,
-            tool_correct=False,
-            schema_valid=False,
-            arguments_correct=False,
-            task_success=False,
-            failure_type="invalid_response_structure",
-        )
-
-    tool_name = response.get("tool")
-    arguments = response.get("arguments")
-
-    if not isinstance(arguments, dict):
-        return EvaluationResult(
-            json_valid=True,
-            tool_correct=(tool_name == expected_tool),
-            schema_valid=False,
-            arguments_correct=False,
-            task_success=False,
-            failure_type="invalid_arguments_structure",
-        )
-
-    # ---------------------------------------------------------
-    # 3. Tool correctness
-    # ---------------------------------------------------------
-
-    tool_correct = tool_name == expected_tool
+    tool_correct = function_name == expected_tool
 
     if not tool_correct:
         return EvaluationResult(
-            json_valid=True,
             tool_correct=False,
             schema_valid=False,
             arguments_correct=False,
@@ -82,15 +49,30 @@ def evaluate_response(
         )
 
     # ---------------------------------------------------------
-    # 4. Schema validity
+    # 3. Check argument structure
     # ---------------------------------------------------------
+    if not isinstance(arguments, dict):
+        return EvaluationResult(
+            tool_correct=True,
+            schema_valid=False,
+            arguments_correct=False,
+            task_success=False,
+            failure_type="invalid_arguments_structure",
+        )
 
+    # ---------------------------------------------------------
+    # 4. Validate arguments against the FULL ground-truth
+    #    schema, not the ablated schema.
+    #
+    #    This is important:
+    #    schema ablation controls what the model sees.
+    #    Evaluation should always use the original schema.
+    # ---------------------------------------------------------
     try:
         validate(
             instance=arguments,
             schema=tool_schema["parameters"],
         )
-
         schema_valid = True
 
     except ValidationError:
@@ -98,7 +80,6 @@ def evaluate_response(
 
     if not schema_valid:
         return EvaluationResult(
-            json_valid=True,
             tool_correct=True,
             schema_valid=False,
             arguments_correct=False,
@@ -107,14 +88,25 @@ def evaluate_response(
         )
 
     # ---------------------------------------------------------
-    # 5. Task correctness
+    # 5. Check semantic argument correctness
+    #
+    #    Most tasks use exact expected_arguments.
+    #
+    #    A task may optionally provide acceptable_arguments when
+    #    more than one representation is explicitly considered
+    #    valid by the benchmark.
     # ---------------------------------------------------------
-
-    arguments_correct = arguments == expected_arguments
+    if acceptable_arguments:
+        arguments_correct = (
+            arguments in acceptable_arguments
+        )
+    else:
+        arguments_correct = (
+            arguments == expected_arguments
+        )
 
     if not arguments_correct:
         return EvaluationResult(
-            json_valid=True,
             tool_correct=True,
             schema_valid=True,
             arguments_correct=False,
@@ -123,11 +115,9 @@ def evaluate_response(
         )
 
     # ---------------------------------------------------------
-    # 6. Complete success
+    # 6. Everything passed
     # ---------------------------------------------------------
-
     return EvaluationResult(
-        json_valid=True,
         tool_correct=True,
         schema_valid=True,
         arguments_correct=True,

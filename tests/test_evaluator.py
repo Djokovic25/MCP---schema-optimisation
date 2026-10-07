@@ -1,141 +1,222 @@
-from src.schemas.loader import load_schema
 from src.evaluation.evaluator import evaluate_response
 
 
-SCHEMA_PATH = "schemas/synthetic/zentrax_lookup.json"
-
-
-def get_schema():
-    return load_schema(SCHEMA_PATH)
-def test_correct_invocation():
-
-    response = """
-    {
-        "tool": "zentrax_lookup",
-        "arguments": {
-            "query": "authentication failures",
-            "mode": "m7"
-        }
-    }
-    """
-
-    result = evaluate_response(
-        raw_response=response,
-        tool_schema=get_schema(),
-        expected_arguments={
-            "query": "authentication failures",
-            "mode": "m7"
+TOOL_SCHEMA = {
+    "name": "search_issues",
+    "description": "Search issues using text, status, and result-count filters.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "Text to search for in issue titles and descriptions.",
+            },
+            "status": {
+                "type": "string",
+                "description": "Filter issues by their current workflow status.",
+                "enum": ["open", "in_progress", "closed"],
+            },
+            "max_results": {
+                "type": "integer",
+                "description": "Maximum number of issues to return.",
+                "minimum": 1,
+                "maximum": 100,
+            },
+            "include_comments": {
+                "type": "boolean",
+                "description": "Whether issue comments should be included in the results.",
+            },
         },
-        expected_tool="zentrax_lookup",
+        "required": ["query"],
+        "additionalProperties": False,
+    },
+}
+
+
+EXPECTED_TOOL = "search_issues"
+
+
+def test_correct_function_call():
+    result = evaluate_response(
+        function_name="search_issues",
+        arguments={
+            "query": "AUTH_FAILURES",
+        },
+        tool_schema=TOOL_SCHEMA,
+        expected_arguments={
+            "query": "AUTH_FAILURES",
+        },
+        expected_tool=EXPECTED_TOOL,
     )
 
-    assert result.json_valid
-    assert result.tool_correct
-    assert result.schema_valid
-    assert result.arguments_correct
-    assert result.task_success
+    assert result.tool_correct is True
+    assert result.schema_valid is True
+    assert result.arguments_correct is True
+    assert result.task_success is True
     assert result.failure_type is None
 
-def test_invalid_json():
 
-    response = """
-    {"tool": "zentrax_lookup",
-    """
-
+def test_no_function_call():
     result = evaluate_response(
-        raw_response=response,
-        tool_schema=get_schema(),
+        function_name=None,
+        arguments=None,
+        tool_schema=TOOL_SCHEMA,
         expected_arguments={
-            "query": "authentication failures",
-            "mode": "m7"
+            "query": "AUTH_FAILURES",
         },
-        expected_tool="zentrax_lookup",
+        expected_tool=EXPECTED_TOOL,
     )
 
-    assert not result.json_valid
-    assert not result.task_success
-    assert result.failure_type == "invalid_json"
+    assert result.tool_correct is False
+    assert result.schema_valid is False
+    assert result.arguments_correct is False
+    assert result.task_success is False
+    assert result.failure_type == "no_function_call"
+
 
 def test_wrong_tool():
-
-    response = """
-    {
-        "tool": "other_tool",
-        "arguments": {
-            "query": "authentication failures",
-            "mode": "m7"
-        }
-    }
-    """
-
     result = evaluate_response(
-        raw_response=response,
-        tool_schema=get_schema(),
-        expected_arguments={
-            "query": "authentication failures",
-            "mode": "m7"
+        function_name="other_tool",
+        arguments={
+            "query": "AUTH_FAILURES",
         },
-        expected_tool="zentrax_lookup",
+        tool_schema=TOOL_SCHEMA,
+        expected_arguments={
+            "query": "AUTH_FAILURES",
+        },
+        expected_tool=EXPECTED_TOOL,
     )
 
-    assert result.json_valid
-    assert not result.tool_correct
-    assert not result.task_success
+    assert result.tool_correct is False
+    assert result.schema_valid is False
+    assert result.arguments_correct is False
+    assert result.task_success is False
     assert result.failure_type == "wrong_tool"
-def test_schema_invalid():
 
-    response = """
-    {
-        "tool": "zentrax_lookup",
-        "arguments": {
-            "query": "authentication failures",
-            "mode": "M7"
-        }
-    }
-    """
 
+def test_invalid_arguments_structure():
     result = evaluate_response(
-        raw_response=response,
-        tool_schema=get_schema(),
+        function_name="search_issues",
+        arguments=None,
+        tool_schema=TOOL_SCHEMA,
         expected_arguments={
-            "query": "authentication failures",
-            "mode": "m7"
+            "query": "AUTH_FAILURES",
         },
-        expected_tool="zentrax_lookup",
+        expected_tool=EXPECTED_TOOL,
     )
 
-    assert result.json_valid
-    assert result.tool_correct
-    assert not result.schema_valid
-    assert not result.task_success
+    assert result.tool_correct is True
+    assert result.schema_valid is False
+    assert result.arguments_correct is False
+    assert result.task_success is False
+    assert result.failure_type == "invalid_arguments_structure"
+
+
+def test_schema_invalid_missing_required_parameter():
+    result = evaluate_response(
+        function_name="search_issues",
+        arguments={},
+        tool_schema=TOOL_SCHEMA,
+        expected_arguments={
+            "query": "AUTH_FAILURES",
+        },
+        expected_tool=EXPECTED_TOOL,
+    )
+
+    assert result.tool_correct is True
+    assert result.schema_valid is False
+    assert result.arguments_correct is False
+    assert result.task_success is False
     assert result.failure_type == "schema_invalid"
-def test_arguments_incorrect():
 
-    response = """
-    {
-        "tool": "zentrax_lookup",
-        "arguments": {
-            "query": "authentication failures",
-            "mode": "m7",
-            "limit": 100
-        }
-    }
-    """
 
+def test_schema_invalid_wrong_type():
     result = evaluate_response(
-        raw_response=response,
-        tool_schema=get_schema(),
-        expected_arguments={
-            "query": "authentication failures",
-            "mode": "m7",
-            "limit": 20
+        function_name="search_issues",
+        arguments={
+            "query": "AUTH_FAILURES",
+            "max_results": "twenty",
         },
-        expected_tool="zentrax_lookup",
+        tool_schema=TOOL_SCHEMA,
+        expected_arguments={
+            "query": "AUTH_FAILURES",
+            "max_results": 20,
+        },
+        expected_tool=EXPECTED_TOOL,
     )
 
-    assert result.json_valid
-    assert result.tool_correct
-    assert result.schema_valid
-    assert not result.arguments_correct
-    assert not result.task_success
+    assert result.tool_correct is True
+    assert result.schema_valid is False
+    assert result.arguments_correct is False
+    assert result.task_success is False
+    assert result.failure_type == "schema_invalid"
+
+
+def test_schema_invalid_enum_value():
+    result = evaluate_response(
+        function_name="search_issues",
+        arguments={
+            "query": "AUTH_FAILURES",
+            "status": "pending",
+        },
+        tool_schema=TOOL_SCHEMA,
+        expected_arguments={
+            "query": "AUTH_FAILURES",
+            "status": "open",
+        },
+        expected_tool=EXPECTED_TOOL,
+    )
+
+    assert result.tool_correct is True
+    assert result.schema_valid is False
+    assert result.arguments_correct is False
+    assert result.task_success is False
+    assert result.failure_type == "schema_invalid"
+
+
+def test_arguments_incorrect_but_schema_valid():
+    result = evaluate_response(
+        function_name="search_issues",
+        arguments={
+            "query": "AUTH_FAILURES",
+            "status": "closed",
+        },
+        tool_schema=TOOL_SCHEMA,
+        expected_arguments={
+            "query": "AUTH_FAILURES",
+            "status": "open",
+        },
+        expected_tool=EXPECTED_TOOL,
+    )
+
+    assert result.tool_correct is True
+    assert result.schema_valid is True
+    assert result.arguments_correct is False
+    assert result.task_success is False
     assert result.failure_type == "arguments_incorrect"
+
+
+def test_correct_multiple_arguments():
+    result = evaluate_response(
+        function_name="search_issues",
+        arguments={
+            "query": "AUTH_FAILURES",
+            "status": "closed",
+            "max_results": 20,
+            "include_comments": True,
+        },
+        tool_schema=TOOL_SCHEMA,
+        expected_arguments={
+            "query": "AUTH_FAILURES",
+            "status": "closed",
+            "max_results": 20,
+            "include_comments": True,
+        },
+        expected_tool=EXPECTED_TOOL,
+    )
+
+    assert result.tool_correct is True
+    assert result.schema_valid is True
+    assert result.arguments_correct is True
+    assert result.task_success is True
+    assert result.failure_type is None
