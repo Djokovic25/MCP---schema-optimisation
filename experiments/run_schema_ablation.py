@@ -234,7 +234,11 @@ from google.genai import errors
 
 from src.experiments.runner import run_trial
 from src.llm.gemini import GeminiClient
-from src.schemas.disclosure import build_ablation
+# from src.schemas.disclosure import build_ablation
+from src.schemas.disclosure import (
+    build_ablation,
+    build_task_disclosure,
+)
 from src.schemas.loader import load_schema
 from src.schemas.task_loader import load_tasks
 
