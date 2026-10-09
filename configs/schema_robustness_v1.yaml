@@ -1,0 +1,29 @@
+
+experiment:
+  name: schema_robustness_v1
+
+model:
+  name: gemini-3.1-flash-lite
+
+schema:
+  path: schemas/synthetic/search_issues_v2.json
+
+tasks:
+  path: tasks/schema_disclosure_tasks_v1.json
+
+target_tasks:
+  - M2
+  - H1
+  - H2
+
+conditions:
+  - name: relevant_only
+  - name: minimal_relevant
+
+execution:
+  repetitions: 5
+  delay_seconds: 5
+  max_calls: 30
+
+output:
+  directory: results/schema_robustness_v1

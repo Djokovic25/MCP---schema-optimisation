@@ -1,3 +1,4 @@
+#EXPERIMENT 2: SCHEMA DISCLOSURE
 import json
 import time
 from dataclasses import asdict

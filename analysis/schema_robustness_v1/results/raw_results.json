@@ -1,0 +1,698 @@
+[
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "limit": 20,
+      "with_comments": true,
+      "state": "closed"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 201,
+    "output_tokens": 36,
+    "latency_ms": 62579.860208
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "with_comments": true,
+      "limit": 20,
+      "state": "closed"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 201,
+    "output_tokens": 36,
+    "latency_ms": 12596.540916999998
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "with_comments": true,
+      "limit": 20,
+      "state": "closed"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 201,
+    "output_tokens": 36,
+    "latency_ms": 2892.5651250000046
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 4,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "state": "closed",
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 201,
+    "output_tokens": 36,
+    "latency_ms": 24877.042
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 5,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "with_comments": true,
+      "state": "closed"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 201,
+    "output_tokens": 36,
+    "latency_ms": 27333.077833000003
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "with_comments": true,
+      "limit": 20,
+      "q": "AUTH_FAILURES state:closed"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 103,
+    "output_tokens": 33,
+    "latency_ms": 10252.550749999984
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "with_comments": true,
+      "limit": 20,
+      "q": "AUTH_FAILURES state:closed"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 103,
+    "output_tokens": 33,
+    "latency_ms": 10943.468875000008
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES state:closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 103,
+    "output_tokens": 33,
+    "latency_ms": 5485.597041
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 4,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES is:issue is:closed",
+      "with_comments": true,
+      "limit": 20
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 103,
+    "output_tokens": 36,
+    "latency_ms": 14762.933875000002
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "M2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 5,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES is:issue is:closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 103,
+    "output_tokens": 36,
+    "latency_ms": 5118.329375000002
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 172,
+    "output_tokens": 73,
+    "latency_ms": 16669.537333
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_before": "2026-02-01T00:00:00Z",
+      "created_after": "2026-01-01T00:00:00Z",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 172,
+    "output_tokens": 73,
+    "latency_ms": 4940.934416000005
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 172,
+    "output_tokens": 73,
+    "latency_ms": 12809.61033300001
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 4,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "created_before": "2026-02-01T00:00:00Z",
+      "created_after": "2026-01-01T00:00:00Z"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 172,
+    "output_tokens": 73,
+    "latency_ms": 11042.830666
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 5,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "q": "AUTH_FAILURES",
+      "created_before": "2026-02-01T00:00:00Z"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 172,
+    "output_tokens": 73,
+    "latency_ms": 3882.966042000007
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "created_before": "2026-02-01",
+      "created_after": "2026-01-01"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 82,
+    "output_tokens": 53,
+    "latency_ms": 5271.421417
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "created_after": "2026-01-01",
+      "created_before": "2026-02-01"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 82,
+    "output_tokens": 53,
+    "latency_ms": 13496.462167000005
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "created_before": "2026-02-01",
+      "created_after": "2026-01-01"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 82,
+    "output_tokens": 53,
+    "latency_ms": 8245.857958
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 4,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_before": "2026-02-01",
+      "q": "AUTH_FAILURES",
+      "created_after": "2026-01-01"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 82,
+    "output_tokens": 53,
+    "latency_ms": 9063.0465
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H1",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 5,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01",
+      "created_before": "2026-02-01",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 82,
+    "output_tokens": 53,
+    "latency_ms": 4558.363874999997
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "q": "AUTH_FAILURES",
+      "assignee": "alice",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "created_before": "2026-02-01T00:00:00Z",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 317,
+    "output_tokens": 97,
+    "latency_ms": 5233.243291999997
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "state": "open",
+      "labels": [
+        "security"
+      ],
+      "q": "AUTH_FAILURES",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "assignee": "alice",
+      "limit": 20
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 317,
+    "output_tokens": 97,
+    "latency_ms": 5580.012875000001
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "security"
+      ],
+      "created_after": "2026-01-01T00:00:00Z",
+      "state": "open",
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "limit": 20
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 317,
+    "output_tokens": 97,
+    "latency_ms": 1995.6270840000059
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 4,
+    "function_name": "search_issues",
+    "arguments": {
+      "state": "open",
+      "labels": [
+        "security"
+      ],
+      "q": "AUTH_FAILURES",
+      "limit": 20,
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "assignee": "alice"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 317,
+    "output_tokens": 97,
+    "latency_ms": 1290.3606670000017
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "relevant_only",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 5,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security"
+      ],
+      "created_before": "2026-02-01T00:00:00Z",
+      "assignee": "alice",
+      "limit": 20,
+      "state": "open",
+      "q": "AUTH_FAILURES",
+      "created_after": "2026-01-01T00:00:00Z"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 317,
+    "output_tokens": 97,
+    "latency_ms": 969.1734169999933
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01",
+      "labels": [
+        "security",
+        "AUTH_FAILURES"
+      ],
+      "q": "AUTH_FAILURES",
+      "created_before": "2026-02-01",
+      "limit": 20,
+      "state": "open",
+      "assignee": "alice"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 163,
+    "output_tokens": 84,
+    "latency_ms": 4761.693457999996
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "state": "open",
+      "limit": 20,
+      "assignee": "alice",
+      "created_after": "2026-01-01",
+      "created_before": "2026-02-01",
+      "q": "AUTH_FAILURES",
+      "labels": [
+        "security"
+      ]
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 163,
+    "output_tokens": 77,
+    "latency_ms": 1436.3318340000005
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "created_after": "2026-01-01",
+      "assignee": "alice",
+      "created_before": "2026-02-01"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 163,
+    "output_tokens": 77,
+    "latency_ms": 11898.312582999992
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 4,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01",
+      "limit": 20,
+      "created_before": "2026-02-01",
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "labels": [
+        "security"
+      ],
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 163,
+    "output_tokens": 77,
+    "latency_ms": 9943.093540999997
+  },
+  {
+    "experiment": "schema_robustness_v1",
+    "task_id": "H2",
+    "condition": "minimal_relevant",
+    "model": "gemini-3.1-flash-lite",
+    "repetition": 5,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "created_before": "2026-02-01",
+      "labels": [
+        "security"
+      ],
+      "state": "open",
+      "q": "AUTH_FAILURES",
+      "assignee": "alice",
+      "created_after": "2026-01-01"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 163,
+    "output_tokens": 77,
+    "latency_ms": 1317.3557499999902
+  }
+]
