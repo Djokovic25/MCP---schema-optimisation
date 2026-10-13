@@ -1,0 +1,49 @@
+experiment:
+  name: schema_ablation_rigorous
+
+model:
+  name: gemini-3.1-flash-lite
+
+schema:
+  path: schemas/synthetic/search_issues_v2.json
+
+tasks:
+  path: tasks/schema_ablation_tasks_v2.json
+
+conditions:
+  - name: full
+    removed_components: []
+
+  - name: minus_tool_description
+    removed_components:
+      - tool_description
+
+  - name: minus_parameter_description
+    removed_components:
+      - parameter_description
+
+  - name: minus_type
+    removed_components:
+      - type
+
+  - name: minus_enum
+    removed_components:
+      - enum
+
+  - name: minus_constraints
+    removed_components:
+      - constraints
+
+  - name: minus_required
+    removed_components:
+      - required
+
+execution:
+  repetitions: 3
+  delay_seconds: 5
+  max_calls: 315
+  max_tasks: 15
+  max_conditions: 7
+
+output:
+  directory: results/schema_ablation_rigorous
