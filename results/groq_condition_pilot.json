@@ -1,0 +1,80 @@
+[
+  {
+    "experiment": "groq_condition_pilot",
+    "task_id": "E1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 324,
+    "output_tokens": 117,
+    "latency_ms": 1758.38425
+  },
+  {
+    "experiment": "groq_condition_pilot",
+    "task_id": "E1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 162,
+    "output_tokens": 75,
+    "latency_ms": 589.0137080000004
+  },
+  {
+    "experiment": "groq_condition_pilot",
+    "task_id": "E1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 189,
+    "output_tokens": 131,
+    "latency_ms": 477.91095800000073
+  },
+  {
+    "experiment": "groq_condition_pilot",
+    "task_id": "E1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 126,
+    "output_tokens": 157,
+    "latency_ms": 578.3717500000005
+  }
+]

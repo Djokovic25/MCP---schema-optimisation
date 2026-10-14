@@ -1,0 +1,3959 @@
+[
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 324,
+    "output_tokens": 75,
+    "latency_ms": 744.58575
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 10,
+      "q": ""
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 324,
+    "output_tokens": 113,
+    "latency_ms": 640.7941250000002
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 324,
+    "output_tokens": 97,
+    "latency_ms": 745.6239589999996
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 162,
+    "output_tokens": 45,
+    "latency_ms": 377.29541699999913
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 162,
+    "output_tokens": 53,
+    "latency_ms": 750.5804590000018
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 162,
+    "output_tokens": 51,
+    "latency_ms": 584.9402919999989
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 189,
+    "output_tokens": 64,
+    "latency_ms": 821.6896249999977
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 189,
+    "output_tokens": 64,
+    "latency_ms": 816.9579159999998
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 189,
+    "output_tokens": 78,
+    "latency_ms": 809.8125409999994
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 126,
+    "output_tokens": 125,
+    "latency_ms": 871.7011669999977
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 126,
+    "output_tokens": 75,
+    "latency_ms": 974.3832079999991
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 126,
+    "output_tokens": 66,
+    "latency_ms": 1231.014541999997
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 83,
+    "latency_ms": 1336.7831660000036
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 86,
+    "latency_ms": 1214.0343330000007
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 100,
+      "q": "",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 180,
+    "latency_ms": 1014.9187080000104
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 187,
+    "output_tokens": 64,
+    "latency_ms": 871.9776249999995
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 187,
+    "output_tokens": 63,
+    "latency_ms": 535.8292500000061
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 187,
+    "output_tokens": 78,
+    "latency_ms": 966.3826250000085
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 214,
+    "output_tokens": 67,
+    "latency_ms": 758.7745419999976
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 214,
+    "output_tokens": 68,
+    "latency_ms": 687.3264580000011
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 214,
+    "output_tokens": 127,
+    "latency_ms": 814.946790999997
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 144,
+    "output_tokens": 77,
+    "latency_ms": 747.0694590000022
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "label:AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 144,
+    "output_tokens": 54,
+    "latency_ms": 678.8918329999944
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E2",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 144,
+    "output_tokens": 53,
+    "latency_ms": 505.09291700001313
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 327,
+    "output_tokens": 67,
+    "latency_ms": 431.8092500000148
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 327,
+    "output_tokens": 184,
+    "latency_ms": 1225.5119169999773
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 100,
+      "q": ""
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 327,
+    "output_tokens": 140,
+    "latency_ms": 807.7014170000041
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 180,
+    "output_tokens": 54,
+    "latency_ms": 1226.4367500000048
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 180,
+    "output_tokens": 160,
+    "latency_ms": 768.617541999987
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "label:AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 180,
+    "output_tokens": 159,
+    "latency_ms": 871.9498750000128
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 207,
+    "output_tokens": 60,
+    "latency_ms": 643.31150000001
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 207,
+    "output_tokens": 82,
+    "latency_ms": 1091.1853750000091
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 207,
+    "output_tokens": 75,
+    "latency_ms": 699.3295409999973
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 134,
+    "output_tokens": 56,
+    "latency_ms": 741.8140409999978
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "label:AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 134,
+    "output_tokens": 126,
+    "latency_ms": 921.9705840000074
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E3",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 134,
+    "output_tokens": 106,
+    "latency_ms": 1125.4819170000019
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 115,
+    "latency_ms": 1048.1633750000015
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 328,
+    "output_tokens": 103,
+    "latency_ms": 747.2478330000172
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 70,
+    "latency_ms": 483.7569590000044
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 181,
+    "output_tokens": 62,
+    "latency_ms": 385.29112500000906
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "label:AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 181,
+    "output_tokens": 173,
+    "latency_ms": 1288.6385409999832
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "label:AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 181,
+    "output_tokens": 153,
+    "latency_ms": 659.9240410000107
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 208,
+    "output_tokens": 115,
+    "latency_ms": 615.2454590000218
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 208,
+    "output_tokens": 115,
+    "latency_ms": 832.3160829999949
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 208,
+    "output_tokens": 67,
+    "latency_ms": 1687.885666999989
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "status:AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 135,
+    "output_tokens": 68,
+    "latency_ms": 749.3602499999952
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 135,
+    "output_tokens": 69,
+    "latency_ms": 635.6159589999493
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E4",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "label:AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 135,
+    "output_tokens": 98,
+    "latency_ms": 396.62291700000196
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 331,
+    "output_tokens": 170,
+    "latency_ms": 654.7620420000158
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 331,
+    "output_tokens": 75,
+    "latency_ms": 892.8260000000137
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 20,
+      "q": "",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 331,
+    "output_tokens": 110,
+    "latency_ms": 1295.9575830000176
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 196,
+    "output_tokens": 52,
+    "latency_ms": 870.0632919999975
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 196,
+    "output_tokens": 56,
+    "latency_ms": 486.54091700001345
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 196,
+    "output_tokens": 74,
+    "latency_ms": 727.6908750000075
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 211,
+    "output_tokens": 62,
+    "latency_ms": 718.7366670000301
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 211,
+    "output_tokens": 68,
+    "latency_ms": 1053.800625000008
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 211,
+    "output_tokens": 124,
+    "latency_ms": 923.6433750000401
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 137,
+    "output_tokens": 66,
+    "latency_ms": 990.3846249999901
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 137,
+    "output_tokens": 105,
+    "latency_ms": 1036.3805410000282
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "E5",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 137,
+    "output_tokens": 81,
+    "latency_ms": 1487.0005419999757
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 10,
+      "q": "",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 217,
+    "latency_ms": 873.6571659999868
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 77,
+    "latency_ms": 905.8110409999927
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "q": "",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 74,
+    "latency_ms": 1017.5108750000277
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 202,
+    "output_tokens": 88,
+    "latency_ms": 716.3257499999531
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 202,
+    "output_tokens": 96,
+    "latency_ms": 1259.1855829999758
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 202,
+    "output_tokens": 93,
+    "latency_ms": 787.0308329999602
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 229,
+    "output_tokens": 67,
+    "latency_ms": 915.7946250000464
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 229,
+    "output_tokens": 108,
+    "latency_ms": 1734.2064999999707
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 229,
+    "output_tokens": 67,
+    "latency_ms": 2360.8779590000495
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 149,
+    "output_tokens": 95,
+    "latency_ms": 927.0186250000165
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 149,
+    "output_tokens": 65,
+    "latency_ms": 876.8280000000459
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 149,
+    "output_tokens": 60,
+    "latency_ms": 700.8596669999747
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 20,
+      "q": "",
+      "sort": "updated_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 337,
+    "output_tokens": 157,
+    "latency_ms": 889.1681669999798
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 20,
+      "q": "",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 337,
+    "output_tokens": 164,
+    "latency_ms": 770.7820420000076
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 20,
+      "q": "",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 337,
+    "output_tokens": 139,
+    "latency_ms": 743.9253329999929
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 238,
+    "output_tokens": 125,
+    "latency_ms": 760.9939580000287
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 238,
+    "output_tokens": 86,
+    "latency_ms": 1834.0873749999673
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 238,
+    "output_tokens": 69,
+    "latency_ms": 822.2058329999982
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 253,
+    "output_tokens": 79,
+    "latency_ms": 2211.3358749999747
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 253,
+    "output_tokens": 140,
+    "latency_ms": 611.3854589999619
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 253,
+    "output_tokens": 103,
+    "latency_ms": 721.2193339999544
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 162,
+    "output_tokens": 79,
+    "latency_ms": 1325.9926250000262
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "type:AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 162,
+    "output_tokens": 265,
+    "latency_ms": 924.0557910000007
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M2",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 162,
+    "output_tokens": 110,
+    "latency_ms": 811.0639159999664
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "limit": 10,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 329,
+    "output_tokens": 120,
+    "latency_ms": 854.2125419999707
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "limit": 10,
+      "q": ""
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 329,
+    "output_tokens": 163,
+    "latency_ms": 1246.3843329999804
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "limit": 10,
+      "q": ""
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 329,
+    "output_tokens": 93,
+    "latency_ms": 768.3267499999715
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 179,
+    "output_tokens": 80,
+    "latency_ms": 647.4075419999963
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 179,
+    "output_tokens": 139,
+    "latency_ms": 764.4202499999437
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 179,
+    "output_tokens": 132,
+    "latency_ms": 844.3205840000019
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "limit": 10,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 206,
+    "output_tokens": 78,
+    "latency_ms": 1225.940416999947
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 206,
+    "output_tokens": 100,
+    "latency_ms": 1248.3067499999834
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "limit": 10,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 206,
+    "output_tokens": 76,
+    "latency_ms": 944.484459000023
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 135,
+    "output_tokens": 108,
+    "latency_ms": 774.2579580000211
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 135,
+    "output_tokens": 144,
+    "latency_ms": 4240.084790999958
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M3",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "security",
+        "backend"
+      ],
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 135,
+    "output_tokens": 69,
+    "latency_ms": 1700.765457999978
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 330,
+    "output_tokens": 231,
+    "latency_ms": 1332.970208000006
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 330,
+    "output_tokens": 95,
+    "latency_ms": 430.89437499997985
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 330,
+    "output_tokens": 130,
+    "latency_ms": 3107.870582999908
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 200,
+    "output_tokens": 68,
+    "latency_ms": 1532.0437500000708
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 200,
+    "output_tokens": 73,
+    "latency_ms": 593.163749999917
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 200,
+    "output_tokens": 90,
+    "latency_ms": 576.6370000000052
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 227,
+    "output_tokens": 132,
+    "latency_ms": 744.2636670000411
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 227,
+    "output_tokens": 86,
+    "latency_ms": 578.0222920000142
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 227,
+    "output_tokens": 89,
+    "latency_ms": 1222.1256249999897
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "label:AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 155,
+    "output_tokens": 130,
+    "latency_ms": 815.3279169999905
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 155,
+    "output_tokens": 59,
+    "latency_ms": 602.9406249999738
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M4",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "label:AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 155,
+    "output_tokens": 164,
+    "latency_ms": 1955.110958999967
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 342,
+    "output_tokens": 88,
+    "latency_ms": 824.233333000052
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 20,
+      "q": "",
+      "sort": "created_desc",
+      "state": "open",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 342,
+    "output_tokens": 139,
+    "latency_ms": 810.3089579999505
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 20,
+      "q": "",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 342,
+    "output_tokens": 179,
+    "latency_ms": 1222.0595000000003
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 275,
+    "output_tokens": 97,
+    "latency_ms": 746.8602080000437
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 275,
+    "output_tokens": 80,
+    "latency_ms": 796.0625420000724
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 275,
+    "output_tokens": 78,
+    "latency_ms": 728.439916999946
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 290,
+    "output_tokens": 95,
+    "latency_ms": 1004.8774170001025
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 290,
+    "output_tokens": 81,
+    "latency_ms": 1058.3425840000018
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 290,
+    "output_tokens": 122,
+    "latency_ms": 828.5046250000505
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 190,
+    "output_tokens": 89,
+    "latency_ms": 751.3587499998948
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 190,
+    "output_tokens": 109,
+    "latency_ms": 922.5907920000509
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "M5",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 190,
+    "output_tokens": 152,
+    "latency_ms": 757.3925420000478
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "limit": 10,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 342,
+    "output_tokens": 137,
+    "latency_ms": 731.3737499999888
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T23:59:59Z",
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 100,
+      "q": "",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 342,
+    "output_tokens": 110,
+    "latency_ms": 910.6174159999227
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 50,
+      "q": ""
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 342,
+    "output_tokens": 186,
+    "latency_ms": 874.1009580000991
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 220,
+    "output_tokens": 122,
+    "latency_ms": 771.4996669999437
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 220,
+    "output_tokens": 140,
+    "latency_ms": 818.8539999999875
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 220,
+    "output_tokens": 131,
+    "latency_ms": 889.7475830000303
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "limit": 50,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 247,
+    "output_tokens": 220,
+    "latency_ms": 862.416082999971
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "limit": 100,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 247,
+    "output_tokens": 149,
+    "latency_ms": 1512.6035000000684
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "limit": 100,
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 247,
+    "output_tokens": 190,
+    "latency_ms": 809.4116669999494
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01",
+      "created_before": "2026-02-01",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 154,
+    "output_tokens": 91,
+    "latency_ms": 819.4298329999583
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01",
+      "created_before": "2026-02-01",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 154,
+    "output_tokens": 96,
+    "latency_ms": 671.8741250000448
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H1",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2026-01-01",
+      "created_before": "2026-02-01",
+      "q": "AUTH_FAILURES"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 154,
+    "output_tokens": 88,
+    "latency_ms": 962.428333000048
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T23:59:59Z",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 359,
+    "output_tokens": 226,
+    "latency_ms": 1081.728584000075
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 359,
+    "output_tokens": 233,
+    "latency_ms": 841.2268329999506
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 359,
+    "output_tokens": 206,
+    "latency_ms": 1210.0211660000468
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 312,
+    "output_tokens": 265,
+    "latency_ms": 1472.7558750000753
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 312,
+    "output_tokens": 311,
+    "latency_ms": 959.7022919999745
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 312,
+    "output_tokens": 224,
+    "latency_ms": 1185.7670829999734
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 327,
+    "output_tokens": 263,
+    "latency_ms": 908.9089160000867
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 327,
+    "output_tokens": 186,
+    "latency_ms": 1946.9094160000395
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01T00:00:00Z",
+      "created_before": "2026-02-01T00:00:00Z",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 327,
+    "output_tokens": 172,
+    "latency_ms": 819.1887919999772
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01",
+      "created_before": "2026-02-01",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 198,
+    "output_tokens": 274,
+    "latency_ms": 1021.2695419999136
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01",
+      "created_before": "2026-02-01",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 198,
+    "output_tokens": 347,
+    "latency_ms": 1092.2160410000288
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H2",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "created_after": "2026-01-01",
+      "created_before": "2026-02-01",
+      "labels": [
+        "security"
+      ],
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 198,
+    "output_tokens": 176,
+    "latency_ms": 1623.7792919999947
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 330,
+    "output_tokens": 104,
+    "latency_ms": 1164.4682500000272
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 20,
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 330,
+    "output_tokens": 162,
+    "latency_ms": 999.122208000017
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 330,
+    "output_tokens": 94,
+    "latency_ms": 609.5577090000006
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 200,
+    "output_tokens": 81,
+    "latency_ms": 4244.758833999981
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 200,
+    "output_tokens": 67,
+    "latency_ms": 1110.3984169999421
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 200,
+    "output_tokens": 74,
+    "latency_ms": 706.1982909999642
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 227,
+    "output_tokens": 78,
+    "latency_ms": 715.3194579999536
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 227,
+    "output_tokens": 71,
+    "latency_ms": 913.2174579999628
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 100,
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 227,
+    "output_tokens": 88,
+    "latency_ms": 823.1590410000535
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 155,
+    "output_tokens": 84,
+    "latency_ms": 720.0300829999833
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "label:AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 155,
+    "output_tokens": 89,
+    "latency_ms": 697.5089170000501
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H3",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "q": "label:AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 155,
+    "output_tokens": 77,
+    "latency_ms": 350.49466600003143
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 50,
+      "q": "",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 340,
+    "output_tokens": 208,
+    "latency_ms": 847.8724169999623
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 50,
+      "q": "",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 340,
+    "output_tokens": 230,
+    "latency_ms": 916.130040999974
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 340,
+    "output_tokens": 137,
+    "latency_ms": 1150.039459000027
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 273,
+    "output_tokens": 96,
+    "latency_ms": 818.248208
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "label:AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 273,
+    "output_tokens": 252,
+    "latency_ms": 727.0252079999864
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 273,
+    "output_tokens": 92,
+    "latency_ms": 793.5074580000219
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 288,
+    "output_tokens": 92,
+    "latency_ms": 1050.9259579999934
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 288,
+    "output_tokens": 104,
+    "latency_ms": 543.2398749999265
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 288,
+    "output_tokens": 80,
+    "latency_ms": 2758.6800420000372
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "label:AUTH_FAILURES state:closed",
+      "sort": "updated_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 188,
+    "output_tokens": 145,
+    "latency_ms": 777.1404169999414
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 188,
+    "output_tokens": 92,
+    "latency_ms": 614.4287920000124
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H4",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "limit": 50,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 188,
+    "output_tokens": 116,
+    "latency_ms": 711.4759160000403
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 340,
+    "output_tokens": 74,
+    "latency_ms": 1317.1002080000562
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 340,
+    "output_tokens": 105,
+    "latency_ms": 1941.5798750000022
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 340,
+    "output_tokens": 168,
+    "latency_ms": 817.0425829999886
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 208,
+    "output_tokens": 126,
+    "latency_ms": 1027.8317919999154
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 208,
+    "output_tokens": 91,
+    "latency_ms": 1104.8959160000322
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "relevant_only",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 208,
+    "output_tokens": 67,
+    "latency_ms": 1247.5097080000523
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 235,
+    "output_tokens": 70,
+    "latency_ms": 1023.8223750000088
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 50,
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 235,
+    "output_tokens": 137,
+    "latency_ms": 1006.4730830001736
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "limit": 10,
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 235,
+    "output_tokens": 94,
+    "latency_ms": 792.5669589999416
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 152,
+    "output_tokens": 66,
+    "latency_ms": 630.0490829999035
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 152,
+    "output_tokens": 75,
+    "latency_ms": 811.7766670000037
+  },
+  {
+    "experiment": "schema_disclosure_groq",
+    "task_id": "H5",
+    "condition": "minimal_relevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "alice",
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 152,
+    "output_tokens": 64,
+    "latency_ms": 527.7753749999192
+  }
+]
