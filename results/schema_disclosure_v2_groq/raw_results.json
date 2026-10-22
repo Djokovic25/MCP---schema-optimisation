@@ -9874,5 +9874,181 @@
     "input_tokens": 213,
     "output_tokens": 252,
     "latency_ms": 1159.0137499997581
+  },
+  {
+    "experiment": "schema_disclosure_v2_groq",
+    "task_id": "N08",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 2,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "bob",
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 10,
+      "q": "",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 165,
+    "latency_ms": 784.0282079999996
+  },
+  {
+    "experiment": "schema_disclosure_v2_groq",
+    "task_id": "N08",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "bob",
+      "q": "AUTH_FAILURES",
+      "state": "closed"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 328,
+    "output_tokens": 139,
+    "latency_ms": 755.6012089999999
+  },
+  {
+    "experiment": "schema_disclosure_v2_groq",
+    "task_id": "N16",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 20,
+      "q": "",
+      "sort": "created_desc",
+      "state": "closed",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 328,
+    "output_tokens": 185,
+    "latency_ms": 914.0187500000003
+  },
+  {
+    "experiment": "schema_disclosure_v2_groq",
+    "task_id": "N21",
+    "condition": "relevant_plus_one_irrelevant",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 1,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "bob",
+      "labels": [
+        "BUG",
+        "REGRESSION"
+      ],
+      "limit": 15,
+      "q": "AUTH_FAILURES",
+      "sort": "updated_asc",
+      "state": "closed",
+      "with_comments": false
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": true,
+    "task_success": true,
+    "failure_type": null,
+    "input_tokens": 328,
+    "output_tokens": 199,
+    "latency_ms": 923.4097080000013
+  },
+  {
+    "experiment": "schema_disclosure_v2_groq",
+    "task_id": "N27",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "assignee": "erin",
+      "labels": [
+        "SECURITY"
+      ],
+      "limit": 20,
+      "q": ""
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 325,
+    "output_tokens": 131,
+    "latency_ms": 1016.1595000000005
+  },
+  {
+    "experiment": "schema_disclosure_v2_groq",
+    "task_id": "N30",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "created_after": "2025-03-01T00:00:00Z",
+      "labels": [
+        "DATABASE_ERRORS"
+      ],
+      "limit": 100,
+      "q": "",
+      "sort": "created_desc",
+      "state": "open"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 336,
+    "output_tokens": 158,
+    "latency_ms": 893.0918340000034
+  },
+  {
+    "experiment": "schema_disclosure_v2_groq",
+    "task_id": "N07",
+    "condition": "full",
+    "model": "openai/gpt-oss-20b",
+    "repetition": 3,
+    "function_name": "search_issues",
+    "arguments": {
+      "labels": [
+        "AUTH_FAILURES"
+      ],
+      "limit": 100,
+      "q": "",
+      "sort": "created_desc"
+    },
+    "tool_correct": true,
+    "schema_valid": true,
+    "arguments_correct": false,
+    "task_success": false,
+    "failure_type": "arguments_incorrect",
+    "input_tokens": 330,
+    "output_tokens": 181,
+    "latency_ms": 1472.91375
   }
 ]

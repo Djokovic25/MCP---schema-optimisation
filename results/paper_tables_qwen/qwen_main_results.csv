@@ -1,0 +1,5 @@
+condition,trials,successful_trials,task_success_%,schema_valid_%,arguments_correct_%,mean_input_tokens,mean_output_tokens,mean_latency_ms,median_latency_ms,latency_sd_ms,tool_correct_%
+full,432.0,229.0,53.01,100.0,53.01,641.99,64.27,988.11,606.18,1034.28,100.0
+relevant_only,432.0,397.0,91.9,100.0,91.9,429.5,77.84,1046.96,624.42,1431.63,100.0
+relevant_plus_one_irrelevant,432.0,387.0,89.58,100.0,89.58,456.26,78.4,1275.86,627.47,4321.36,100.0
+minimal_relevant,432.0,346.0,80.09,100.0,80.09,341.92,76.79,2814.58,634.81,9682.97,100.0

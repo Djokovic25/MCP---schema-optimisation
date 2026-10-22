@@ -1,0 +1,5 @@
+difficulty,condition,trials,successful_trials,success_rate
+,full,324,234,72.22222222222221
+,minimal_relevant,324,197,60.802469135802475
+,relevant_only,324,246,75.92592592592592
+,relevant_plus_one_irrelevant,324,253,78.08641975308642

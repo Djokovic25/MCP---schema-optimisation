@@ -1,0 +1,2907 @@
+[
+  {
+    "id": "D01",
+    "difficulty": "easy",
+    "category": "required_fields",
+    "description": "Return the id and status fields for orders.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "status"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D02",
+    "difficulty": "easy",
+    "category": "enum_filter",
+    "description": "Return id and amount for failed payments, with newest records first.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "id",
+        "amount"
+      ],
+      "status": "failed",
+      "descending": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "descending"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D03",
+    "difficulty": "medium",
+    "category": "range_filter",
+    "description": "Return id, customer_id, and amount for completed orders with amount from 50 through 200, capped at 40 records.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "customer_id",
+        "amount"
+      ],
+      "status": "completed",
+      "min_amount": 50,
+      "max_amount": 200,
+      "limit": 40
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "min_amount",
+      "max_amount",
+      "limit"
+    ],
+    "irrelevant_parameter": "descending",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D04",
+    "difficulty": "hard",
+    "category": "combined_temporal_filters",
+    "description": "Return customer_id, amount, and created_at for failed payments in the west region created from 2025-03-01T00:00:00Z until before 2025-04-01T00:00:00Z, newest first, capped at 25.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "customer_id",
+        "amount",
+        "created_at"
+      ],
+      "status": "failed",
+      "region": "west",
+      "created_after": "2025-03-01T00:00:00Z",
+      "created_before": "2025-04-01T00:00:00Z",
+      "descending": true,
+      "limit": 25
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "region",
+      "created_after",
+      "created_before",
+      "descending",
+      "limit"
+    ],
+    "irrelevant_parameter": "max_amount",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D05",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return id and region for customers.",
+    "expected_arguments": {
+      "table": "customers",
+      "select": [
+        "id",
+        "region"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select"
+    ],
+    "irrelevant_parameter": "status",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D06",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return order id and created_at for orders, capped at 20 records.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "created_at"
+      ],
+      "limit": 20
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "limit"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D07",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return id and status for completed shipments.",
+    "expected_arguments": {
+      "table": "shipments",
+      "select": [
+        "id",
+        "status"
+      ],
+      "status": "completed"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status"
+    ],
+    "irrelevant_parameter": "descending",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D08",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return id and amount for transactions in the east region.",
+    "expected_arguments": {
+      "table": "transactions",
+      "select": [
+        "id",
+        "amount"
+      ],
+      "region": "east"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "region"
+    ],
+    "irrelevant_parameter": "offset",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D09",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return id and created_at for payments created after 2025-01-01T00:00:00Z.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "id",
+        "created_at"
+      ],
+      "created_after": "2025-01-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "created_after"
+    ],
+    "irrelevant_parameter": "status",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D10",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return id and status for orders, newest first, with a maximum of 10 records.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "status"
+      ],
+      "descending": true,
+      "limit": 10
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "descending",
+      "limit"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D11",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return id and customer_id for invoices in the north region.",
+    "expected_arguments": {
+      "table": "invoices",
+      "select": [
+        "id",
+        "customer_id"
+      ],
+      "region": "north"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "region"
+    ],
+    "irrelevant_parameter": "distinct",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D12",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return id and amount for refunds with amount at least 25.",
+    "expected_arguments": {
+      "table": "refunds",
+      "select": [
+        "id",
+        "amount"
+      ],
+      "min_amount": 25
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "min_amount"
+    ],
+    "irrelevant_parameter": "status",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D13",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return id and status for tasks, skipping the first 5 records.",
+    "expected_arguments": {
+      "table": "tasks",
+      "select": [
+        "id",
+        "status"
+      ],
+      "offset": 5
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "offset"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D14",
+    "difficulty": "easy",
+    "category": "basic_selection_filter",
+    "description": "Return id and amount for payments, removing duplicate rows.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "id",
+        "amount"
+      ],
+      "distinct": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "distinct"
+    ],
+    "irrelevant_parameter": "status",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D15",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id, amount, and status for invoices in the south region with amount from 100 through 500.",
+    "expected_arguments": {
+      "table": "invoices",
+      "select": [
+        "id",
+        "amount",
+        "status"
+      ],
+      "region": "south",
+      "min_amount": 100,
+      "max_amount": 500
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "region",
+      "min_amount",
+      "max_amount"
+    ],
+    "irrelevant_parameter": "descending",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D16",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id and created_at for failed jobs created between 2025-01-01T00:00:00Z and 2025-02-01T00:00:00Z.",
+    "expected_arguments": {
+      "table": "jobs",
+      "select": [
+        "id",
+        "created_at"
+      ],
+      "status": "failed",
+      "created_after": "2025-01-01T00:00:00Z",
+      "created_before": "2025-02-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "created_after",
+      "created_before"
+    ],
+    "irrelevant_parameter": "offset",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D17",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return customer_id and amount for orders over 250, newest first.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "customer_id",
+        "amount"
+      ],
+      "min_amount": 250,
+      "descending": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "min_amount",
+      "descending"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D18",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id and status for events grouped by status.",
+    "expected_arguments": {
+      "table": "events",
+      "select": [
+        "id",
+        "status"
+      ],
+      "group_by": [
+        "status"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "group_by"
+    ],
+    "irrelevant_parameter": "distinct",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D19",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id, region, and status for tickets in west with status open, capped at 75.",
+    "expected_arguments": {
+      "table": "tickets",
+      "select": [
+        "id",
+        "region",
+        "status"
+      ],
+      "region": "west",
+      "status": "open",
+      "limit": 75
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "region",
+      "status",
+      "limit"
+    ],
+    "irrelevant_parameter": "descending",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D20",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id and amount for completed payments with amount no greater than 90.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "id",
+        "amount"
+      ],
+      "status": "completed",
+      "max_amount": 90
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "max_amount"
+    ],
+    "irrelevant_parameter": "offset",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D21",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id and created_at for orders created after 2025-04-01T00:00:00Z, skipping 20 records.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "created_at"
+      ],
+      "created_after": "2025-04-01T00:00:00Z",
+      "offset": 20
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "created_after",
+      "offset"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D22",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return status and region for incidents, grouping results by region and status.",
+    "expected_arguments": {
+      "table": "incidents",
+      "select": [
+        "status",
+        "region"
+      ],
+      "group_by": [
+        "region",
+        "status"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "group_by"
+    ],
+    "irrelevant_parameter": "distinct",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D23",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id and amount for completed refunds between 10 and 100, ordered descending, capped at 60.",
+    "expected_arguments": {
+      "table": "refunds",
+      "select": [
+        "id",
+        "amount"
+      ],
+      "status": "completed",
+      "min_amount": 10,
+      "max_amount": 100,
+      "descending": true,
+      "limit": 60
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "min_amount",
+      "max_amount",
+      "descending",
+      "limit"
+    ],
+    "irrelevant_parameter": "offset",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D24",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id and status for tasks in the central region, excluding null-containing rows.",
+    "expected_arguments": {
+      "table": "tasks",
+      "select": [
+        "id",
+        "status"
+      ],
+      "region": "central",
+      "include_nulls": false
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "region",
+      "include_nulls"
+    ],
+    "irrelevant_parameter": "group_by",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D25",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return customer_id and amount for payments created before 2025-07-01T00:00:00Z, newest first.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "customer_id",
+        "amount"
+      ],
+      "created_before": "2025-07-01T00:00:00Z",
+      "descending": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "created_before",
+      "descending"
+    ],
+    "irrelevant_parameter": "status",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D26",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id and status for orders, distinct by id and status.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "status"
+      ],
+      "distinct": true,
+      "group_by": [
+        "id",
+        "status"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "distinct",
+      "group_by"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D27",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id and amount for transactions in the west region with amount from 0 through 75, skipping 10.",
+    "expected_arguments": {
+      "table": "transactions",
+      "select": [
+        "id",
+        "amount"
+      ],
+      "region": "west",
+      "min_amount": 0,
+      "max_amount": 75,
+      "offset": 10
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "region",
+      "min_amount",
+      "max_amount",
+      "offset"
+    ],
+    "irrelevant_parameter": "descending",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D28",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Return id and created_at for audit records between 2024-12-01T00:00:00Z and 2025-01-01T00:00:00Z, capped at 100.",
+    "expected_arguments": {
+      "table": "audit_records",
+      "select": [
+        "id",
+        "created_at"
+      ],
+      "created_after": "2024-12-01T00:00:00Z",
+      "created_before": "2025-01-01T00:00:00Z",
+      "limit": 100
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "created_after",
+      "created_before",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_nulls",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D29",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Return id, customer_id, amount, and created_at for failed payments in the east region with amount 100–1000, created between 2025-01-01T00:00:00Z and 2025-04-01T00:00:00Z, newest first, capped at 30.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "id",
+        "customer_id",
+        "amount",
+        "created_at"
+      ],
+      "status": "failed",
+      "region": "east",
+      "min_amount": 100,
+      "max_amount": 1000,
+      "created_after": "2025-01-01T00:00:00Z",
+      "created_before": "2025-04-01T00:00:00Z",
+      "descending": true,
+      "limit": 30
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "region",
+      "min_amount",
+      "max_amount",
+      "created_after",
+      "created_before",
+      "descending",
+      "limit"
+    ],
+    "irrelevant_parameter": "offset",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D30",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Return customer_id, status, and amount for completed orders in the north region, grouping by customer_id and status, removing duplicates, and limiting results to 40.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "customer_id",
+        "status",
+        "amount"
+      ],
+      "status": "completed",
+      "region": "north",
+      "group_by": [
+        "customer_id",
+        "status"
+      ],
+      "distinct": true,
+      "limit": 40
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "region",
+      "group_by",
+      "distinct",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_nulls",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D31",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Return id, region, and created_at for audit events created between 2024-01-01T00:00:00Z and 2025-01-01T00:00:00Z, including null-containing rows, newest first, starting at offset 15.",
+    "expected_arguments": {
+      "table": "audit_events",
+      "select": [
+        "id",
+        "region",
+        "created_at"
+      ],
+      "created_after": "2024-01-01T00:00:00Z",
+      "created_before": "2025-01-01T00:00:00Z",
+      "include_nulls": true,
+      "descending": true,
+      "offset": 15
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "created_after",
+      "created_before",
+      "include_nulls",
+      "descending",
+      "offset"
+    ],
+    "irrelevant_parameter": "status",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D32",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Return id, amount, and status for refunds in the west region between 20 and 400, created after 2025-02-01T00:00:00Z, grouped by status, capped at 22.",
+    "expected_arguments": {
+      "table": "refunds",
+      "select": [
+        "id",
+        "amount",
+        "status"
+      ],
+      "region": "west",
+      "min_amount": 20,
+      "max_amount": 400,
+      "created_after": "2025-02-01T00:00:00Z",
+      "group_by": [
+        "status"
+      ],
+      "limit": 22
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "region",
+      "min_amount",
+      "max_amount",
+      "created_after",
+      "group_by",
+      "limit"
+    ],
+    "irrelevant_parameter": "descending",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D33",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Return customer_id, region, and amount for transactions with status settled, created before 2025-06-01T00:00:00Z, amount 50–5000, distinct, and newest first.",
+    "expected_arguments": {
+      "table": "transactions",
+      "select": [
+        "customer_id",
+        "region",
+        "amount"
+      ],
+      "status": "settled",
+      "created_before": "2025-06-01T00:00:00Z",
+      "min_amount": 50,
+      "max_amount": 5000,
+      "distinct": true,
+      "descending": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "created_before",
+      "min_amount",
+      "max_amount",
+      "distinct",
+      "descending"
+    ],
+    "irrelevant_parameter": "offset",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D34",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Return id, status, region, and created_at for incidents in the south region with status resolved, between 2025-01-01T00:00:00Z and 2025-05-01T00:00:00Z, group by region and status, limit 18.",
+    "expected_arguments": {
+      "table": "incidents",
+      "select": [
+        "id",
+        "status",
+        "region",
+        "created_at"
+      ],
+      "region": "south",
+      "status": "resolved",
+      "created_after": "2025-01-01T00:00:00Z",
+      "created_before": "2025-05-01T00:00:00Z",
+      "group_by": [
+        "region",
+        "status"
+      ],
+      "limit": 18
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "region",
+      "status",
+      "created_after",
+      "created_before",
+      "group_by",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_nulls",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D35",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Return id, amount, and created_at for completed invoices with amount 500–5000, excluding null-containing rows, oldest first, skipping 25 and limiting to 50.",
+    "expected_arguments": {
+      "table": "invoices",
+      "select": [
+        "id",
+        "amount",
+        "created_at"
+      ],
+      "status": "completed",
+      "min_amount": 500,
+      "max_amount": 5000,
+      "include_nulls": false,
+      "descending": false,
+      "offset": 25,
+      "limit": 50
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "min_amount",
+      "max_amount",
+      "include_nulls",
+      "descending",
+      "offset",
+      "limit"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D36",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Return customer_id, status, and region for failed jobs created from 2024-11-01T00:00:00Z until 2025-02-01T00:00:00Z, grouped by status and region, distinct, with at most 35 rows.",
+    "expected_arguments": {
+      "table": "jobs",
+      "select": [
+        "customer_id",
+        "status",
+        "region"
+      ],
+      "status": "failed",
+      "created_after": "2024-11-01T00:00:00Z",
+      "created_before": "2025-02-01T00:00:00Z",
+      "group_by": [
+        "status",
+        "region"
+      ],
+      "distinct": true,
+      "limit": 35
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "created_after",
+      "created_before",
+      "group_by",
+      "distinct",
+      "limit"
+    ],
+    "irrelevant_parameter": "max_amount",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "F01",
+    "difficulty": "easy",
+    "category": "single_parameter",
+    "description": "Find files whose names or contents mention migration-checklist.",
+    "expected_arguments": {
+      "query": "migration-checklist"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query"
+    ],
+    "irrelevant_parameter": "extension",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F02",
+    "difficulty": "easy",
+    "category": "extension_filter",
+    "description": "Find Python files mentioning retry policy under /services.",
+    "expected_arguments": {
+      "query": "retry policy",
+      "root_path": "/services",
+      "extension": "py"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F03",
+    "difficulty": "medium",
+    "category": "date_filter",
+    "description": "Find Markdown files mentioning deployment, modified on or after 2025-01-01T00:00:00Z.",
+    "expected_arguments": {
+      "query": "deployment",
+      "extension": "md",
+      "modified_after": "2025-01-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "extension",
+      "modified_after"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F04",
+    "difficulty": "medium",
+    "category": "sort_limit",
+    "description": "Find up to 12 files matching model-config under /experiments, newest modified first.",
+    "expected_arguments": {
+      "query": "model-config",
+      "root_path": "/experiments",
+      "sort": "modified_desc",
+      "limit": 12
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F05",
+    "difficulty": "hard",
+    "category": "combined_filters",
+    "description": "Find hidden-inclusive YAML files under /deploy that mention secrets, modified from 2025-02-01T00:00:00Z until before 2025-04-01T00:00:00Z, ordered oldest first.",
+    "expected_arguments": {
+      "query": "secrets",
+      "root_path": "/deploy",
+      "extension": "yaml",
+      "include_hidden": true,
+      "modified_after": "2025-02-01T00:00:00Z",
+      "modified_before": "2025-04-01T00:00:00Z",
+      "sort": "modified_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "include_hidden",
+      "modified_after",
+      "modified_before",
+      "sort"
+    ],
+    "irrelevant_parameter": "limit",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F06",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find files mentioning invoice reconciliation.",
+    "expected_arguments": {
+      "query": "invoice reconciliation"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F07",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find JSON files mentioning experiment settings.",
+    "expected_arguments": {
+      "query": "experiment settings",
+      "extension": "json"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "extension"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F08",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find files about model checkpoints under /research.",
+    "expected_arguments": {
+      "query": "model checkpoints",
+      "root_path": "/research"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path"
+    ],
+    "irrelevant_parameter": "limit",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F09",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find Markdown files mentioning onboarding under /docs.",
+    "expected_arguments": {
+      "query": "onboarding",
+      "root_path": "/docs",
+      "extension": "md"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F10",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find files mentioning database connection strings, including hidden files.",
+    "expected_arguments": {
+      "query": "database connection strings",
+      "include_hidden": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "include_hidden"
+    ],
+    "irrelevant_parameter": "extension",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F11",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find up to 15 files mentioning validation errors.",
+    "expected_arguments": {
+      "query": "validation errors",
+      "limit": 15
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "limit"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F12",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find files owned by build-bot mentioning release notes.",
+    "expected_arguments": {
+      "query": "release notes",
+      "owner": "build-bot"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F13",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find files about image embeddings larger than 1000 bytes.",
+    "expected_arguments": {
+      "query": "image embeddings",
+      "min_size_bytes": 1000
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "min_size_bytes"
+    ],
+    "irrelevant_parameter": "extension",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F14",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find files about archived logs smaller than 50000 bytes.",
+    "expected_arguments": {
+      "query": "archived logs",
+      "max_size_bytes": 50000
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "max_size_bytes"
+    ],
+    "irrelevant_parameter": "root_path",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F15",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find Python files mentioning schema validation, ordered by name ascending.",
+    "expected_arguments": {
+      "query": "schema validation",
+      "extension": "py",
+      "sort": "name_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "extension",
+      "sort"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F16",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find CSV files under /data mentioning patient outcomes, sorted by largest size first.",
+    "expected_arguments": {
+      "query": "patient outcomes",
+      "root_path": "/data",
+      "extension": "csv",
+      "sort": "size_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "sort"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F17",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find files mentioning training logs modified before 2025-01-01T00:00:00Z.",
+    "expected_arguments": {
+      "query": "training logs",
+      "modified_before": "2025-01-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "modified_before"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F18",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find files under /src mentioning retry logic, owned by platform-team.",
+    "expected_arguments": {
+      "query": "retry logic",
+      "root_path": "/src",
+      "owner": "platform-team"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "owner"
+    ],
+    "irrelevant_parameter": "extension",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F19",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find YAML files mentioning deployment under /infra with at most 20 results.",
+    "expected_arguments": {
+      "query": "deployment",
+      "root_path": "/infra",
+      "extension": "yaml",
+      "limit": 20
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F20",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find files mentioning benchmark results with size between 500 and 50000 bytes.",
+    "expected_arguments": {
+      "query": "benchmark results",
+      "min_size_bytes": 500,
+      "max_size_bytes": 50000
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "min_size_bytes",
+      "max_size_bytes"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F21",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find files mentioning audit report modified from 2025-01-01T00:00:00Z through 2025-06-01T00:00:00Z.",
+    "expected_arguments": {
+      "query": "audit report",
+      "modified_after": "2025-01-01T00:00:00Z",
+      "modified_before": "2025-06-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "modified_after",
+      "modified_before"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F22",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find hidden-inclusive Python files under /tools mentioning data migration.",
+    "expected_arguments": {
+      "query": "data migration",
+      "root_path": "/tools",
+      "extension": "py",
+      "include_hidden": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "include_hidden"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F23",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find up to 8 files mentioning cache invalidation owned by service-bot, newest modified first.",
+    "expected_arguments": {
+      "query": "cache invalidation",
+      "owner": "service-bot",
+      "limit": 8,
+      "sort": "modified_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "limit",
+      "sort"
+    ],
+    "irrelevant_parameter": "extension",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F24",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find Markdown files under /guides mentioning incident response, ordered by name descending.",
+    "expected_arguments": {
+      "query": "incident response",
+      "root_path": "/guides",
+      "extension": "md",
+      "sort": "name_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "sort"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F25",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find files mentioning embeddings modified after 2024-09-01T00:00:00Z and at least 2048 bytes.",
+    "expected_arguments": {
+      "query": "embeddings",
+      "modified_after": "2024-09-01T00:00:00Z",
+      "min_size_bytes": 2048
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "modified_after",
+      "min_size_bytes"
+    ],
+    "irrelevant_parameter": "extension",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F26",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find files mentioning dependency lockfile with extension yaml and size at most 200000 bytes.",
+    "expected_arguments": {
+      "query": "dependency lockfile",
+      "extension": "yaml",
+      "max_size_bytes": 200000
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "extension",
+      "max_size_bytes"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F27",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find files under /models mentioning calibration, modified newest first, capped at 35.",
+    "expected_arguments": {
+      "query": "calibration",
+      "root_path": "/models",
+      "sort": "modified_desc",
+      "limit": 35
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F28",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find files mentioning schema registry owned by data-eng, sorted oldest modified first.",
+    "expected_arguments": {
+      "query": "schema registry",
+      "owner": "data-eng",
+      "sort": "modified_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "sort"
+    ],
+    "irrelevant_parameter": "root_path",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F29",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find up to 8 hidden-inclusive Python files under /src mentioning model checkpoints, modified from 2024-06-01T00:00:00Z until before 2025-01-01T00:00:00Z, at least 2048 bytes, sorted by newest modification.",
+    "expected_arguments": {
+      "query": "model checkpoints",
+      "root_path": "/src",
+      "extension": "py",
+      "include_hidden": true,
+      "modified_after": "2024-06-01T00:00:00Z",
+      "modified_before": "2025-01-01T00:00:00Z",
+      "min_size_bytes": 2048,
+      "sort": "modified_desc",
+      "limit": 8
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "include_hidden",
+      "modified_after",
+      "modified_before",
+      "min_size_bytes",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F30",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find files under /clinical mentioning cohort analysis, owned by research-team, modified after 2025-02-01T00:00:00Z, between 200 and 20000 bytes, sorted by size descending.",
+    "expected_arguments": {
+      "query": "cohort analysis",
+      "root_path": "/clinical",
+      "owner": "research-team",
+      "modified_after": "2025-02-01T00:00:00Z",
+      "min_size_bytes": 200,
+      "max_size_bytes": 20000,
+      "sort": "size_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "owner",
+      "modified_after",
+      "min_size_bytes",
+      "max_size_bytes",
+      "sort"
+    ],
+    "irrelevant_parameter": "extension",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F31",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find up to 6 hidden-inclusive YAML files under /deploy mentioning secret rotation, modified between 2025-03-01T00:00:00Z and 2025-05-01T00:00:00Z, owned by ops, oldest first.",
+    "expected_arguments": {
+      "query": "secret rotation",
+      "root_path": "/deploy",
+      "extension": "yaml",
+      "include_hidden": true,
+      "modified_after": "2025-03-01T00:00:00Z",
+      "modified_before": "2025-05-01T00:00:00Z",
+      "owner": "ops",
+      "sort": "modified_asc",
+      "limit": 6
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "include_hidden",
+      "modified_after",
+      "modified_before",
+      "owner",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "max_size_bytes",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F32",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find files mentioning model artifact under /artifacts with extension bin, between 100000 and 900000 bytes, modified before 2025-06-01T00:00:00Z, capped at 14.",
+    "expected_arguments": {
+      "query": "model artifact",
+      "root_path": "/artifacts",
+      "extension": "bin",
+      "min_size_bytes": 100000,
+      "max_size_bytes": 900000,
+      "modified_before": "2025-06-01T00:00:00Z",
+      "limit": 14
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "min_size_bytes",
+      "max_size_bytes",
+      "modified_before",
+      "limit"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F33",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find up to 9 Markdown files mentioning incident postmortem under /operations, owned by sre-team, modified between 2024-10-01T00:00:00Z and 2025-02-01T00:00:00Z, ordered by name descending.",
+    "expected_arguments": {
+      "query": "incident postmortem",
+      "root_path": "/operations",
+      "extension": "md",
+      "owner": "sre-team",
+      "modified_after": "2024-10-01T00:00:00Z",
+      "modified_before": "2025-02-01T00:00:00Z",
+      "sort": "name_desc",
+      "limit": 9
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "owner",
+      "modified_after",
+      "modified_before",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F34",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find hidden-inclusive files under /research mentioning attention maps, larger than 4096 bytes and at most 250000 bytes, modified after 2025-01-15T00:00:00Z, sorted by newest modification.",
+    "expected_arguments": {
+      "query": "attention maps",
+      "root_path": "/research",
+      "include_hidden": true,
+      "min_size_bytes": 4096,
+      "max_size_bytes": 250000,
+      "modified_after": "2025-01-15T00:00:00Z",
+      "sort": "modified_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "include_hidden",
+      "min_size_bytes",
+      "max_size_bytes",
+      "modified_after",
+      "sort"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F35",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find up to 11 CSV files under /exports mentioning billing adjustment, owned by finance-bot, modified before 2025-04-01T00:00:00Z and sorted by oldest modification.",
+    "expected_arguments": {
+      "query": "billing adjustment",
+      "root_path": "/exports",
+      "extension": "csv",
+      "owner": "finance-bot",
+      "modified_before": "2025-04-01T00:00:00Z",
+      "sort": "modified_asc",
+      "limit": 11
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "owner",
+      "modified_before",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F36",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find hidden-inclusive JSON files under /configs mentioning feature flags, at least 512 bytes, modified from 2024-12-01T00:00:00Z until before 2025-03-01T00:00:00Z, capped at 5 and sorted by name ascending.",
+    "expected_arguments": {
+      "query": "feature flags",
+      "root_path": "/configs",
+      "extension": "json",
+      "include_hidden": true,
+      "min_size_bytes": 512,
+      "modified_after": "2024-12-01T00:00:00Z",
+      "modified_before": "2025-03-01T00:00:00Z",
+      "limit": 5,
+      "sort": "name_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "include_hidden",
+      "min_size_bytes",
+      "modified_after",
+      "modified_before",
+      "limit",
+      "sort"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "R01",
+    "difficulty": "easy",
+    "category": "single_parameter",
+    "description": "Find repositories matching the term observability.",
+    "expected_arguments": {
+      "query": "observability"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R02",
+    "difficulty": "easy",
+    "category": "enum_filter",
+    "description": "Find Python repositories about observability, sorted by most recently updated.",
+    "expected_arguments": {
+      "query": "observability",
+      "language": "Python",
+      "sort": "updated_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "sort"
+    ],
+    "irrelevant_parameter": "archived",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R03",
+    "difficulty": "medium",
+    "category": "multi_parameter",
+    "description": "Find Rust compiler repositories owned by acme with at least 250 stars, excluding archived repositories.",
+    "expected_arguments": {
+      "query": "compiler",
+      "owner": "acme",
+      "language": "Rust",
+      "stars_min": 250,
+      "archived": false
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "language",
+      "stars_min",
+      "archived"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R04",
+    "difficulty": "medium",
+    "category": "constraint_sort",
+    "description": "Find up to 15 TypeScript repositories about accessibility, ordered by stars from highest to lowest.",
+    "expected_arguments": {
+      "query": "accessibility",
+      "language": "TypeScript",
+      "sort": "stars_desc",
+      "limit": 15
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R05",
+    "difficulty": "hard",
+    "category": "combined_filters",
+    "description": "Find up to 8 non-archived Java repositories about payment processing owned by fin-platform with at least 1000 stars, without specifying an ordering.",
+    "expected_arguments": {
+      "query": "payment processing",
+      "language": "Java",
+      "owner": "fin-platform",
+      "stars_min": 1000,
+      "archived": false,
+      "limit": 8
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "owner",
+      "stars_min",
+      "archived",
+      "limit"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R06",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find repositories mentioning vector search.",
+    "expected_arguments": {
+      "query": "vector search"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query"
+    ],
+    "irrelevant_parameter": "topic",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R07",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find Go repositories about rate limiting.",
+    "expected_arguments": {
+      "query": "rate limiting",
+      "language": "Go"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R08",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find repositories owned by data-platform that mention ETL.",
+    "expected_arguments": {
+      "query": "ETL",
+      "owner": "data-platform"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R09",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find JavaScript repositories about accessibility.",
+    "expected_arguments": {
+      "query": "accessibility",
+      "language": "JavaScript"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language"
+    ],
+    "irrelevant_parameter": "topic",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R10",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find repositories about image segmentation with at least 50 stars.",
+    "expected_arguments": {
+      "query": "image segmentation",
+      "stars_min": 50
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "stars_min"
+    ],
+    "irrelevant_parameter": "archived",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R11",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find repositories about observability with at most 500 stars.",
+    "expected_arguments": {
+      "query": "observability",
+      "stars_max": 500
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "stars_max"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R12",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find repositories about medical imaging created after 2024-01-01.",
+    "expected_arguments": {
+      "query": "medical imaging",
+      "created_after": "2024-01-01"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "created_after"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R13",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find non-archived repositories about model serving.",
+    "expected_arguments": {
+      "query": "model serving",
+      "archived": false
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "archived"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R14",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find repositories about graph neural networks, including forks.",
+    "expected_arguments": {
+      "query": "graph neural networks",
+      "include_forks": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "include_forks"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R15",
+    "difficulty": "easy",
+    "category": "basic_filter",
+    "description": "Find up to 20 repositories about data quality.",
+    "expected_arguments": {
+      "query": "data quality",
+      "limit": 20
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "limit"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R16",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find C++ repositories about point-cloud segmentation with topic computer-vision.",
+    "expected_arguments": {
+      "query": "point-cloud segmentation",
+      "language": "C++",
+      "topic": "computer-vision"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "topic"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R17",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find repositories about clinical NLP owned by health-ai with at least 100 stars.",
+    "expected_arguments": {
+      "query": "clinical NLP",
+      "owner": "health-ai",
+      "stars_min": 100
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "stars_min"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R18",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find Python repositories about vector databases created before 2023-01-01.",
+    "expected_arguments": {
+      "query": "vector database",
+      "language": "Python",
+      "created_before": "2023-01-01"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "created_before"
+    ],
+    "irrelevant_parameter": "archived",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R19",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find repositories about API gateways with 100 to 800 stars.",
+    "expected_arguments": {
+      "query": "API gateway",
+      "stars_min": 100,
+      "stars_max": 800
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "stars_min",
+      "stars_max"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R20",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find non-archived Kotlin repositories about payments sorted by creation date, newest first.",
+    "expected_arguments": {
+      "query": "payments",
+      "language": "Kotlin",
+      "archived": false,
+      "sort": "created_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "archived",
+      "sort"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R21",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find up to 25 repositories about federated learning owned by research-lab, sorted by fewest stars.",
+    "expected_arguments": {
+      "query": "federated learning",
+      "owner": "research-lab",
+      "sort": "stars_asc",
+      "limit": 25
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "topic",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R22",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find Ruby repositories about background jobs updated in descending order.",
+    "expected_arguments": {
+      "query": "background jobs",
+      "language": "Ruby",
+      "sort": "updated_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "sort"
+    ],
+    "irrelevant_parameter": "archived",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R23",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find repositories about database migration created between 2022-01-01 and 2024-01-01.",
+    "expected_arguments": {
+      "query": "database migration",
+      "created_after": "2022-01-01",
+      "created_before": "2024-01-01"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "created_after",
+      "created_before"
+    ],
+    "irrelevant_parameter": "topic",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R24",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find repositories about secure authentication with topic oauth.",
+    "expected_arguments": {
+      "query": "secure authentication",
+      "topic": "oauth"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "topic"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R25",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find repositories about model compression with at least 400 stars, capped at 30 results.",
+    "expected_arguments": {
+      "query": "model compression",
+      "stars_min": 400,
+      "limit": 30
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "stars_min",
+      "limit"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R26",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find non-archived Python repositories about retinal imaging created after 2021-06-01.",
+    "expected_arguments": {
+      "query": "retinal imaging",
+      "language": "Python",
+      "archived": false,
+      "created_after": "2021-06-01"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "archived",
+      "created_after"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R27",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find repositories owned by open-data about geospatial analytics, ordered oldest first.",
+    "expected_arguments": {
+      "query": "geospatial analytics",
+      "owner": "open-data",
+      "sort": "created_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "sort"
+    ],
+    "irrelevant_parameter": "stars_min",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R28",
+    "difficulty": "medium",
+    "category": "multi_filter",
+    "description": "Find repositories about streaming systems in Scala, including forks, with at least 75 stars.",
+    "expected_arguments": {
+      "query": "streaming systems",
+      "language": "Scala",
+      "include_forks": true,
+      "stars_min": 75
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "include_forks",
+      "stars_min"
+    ],
+    "irrelevant_parameter": "archived",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R29",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find up to 10 non-archived Python repositories owned by med-ai about image registration, with at least 300 stars, created from 2020-01-01 through 2023-12-31, sorted by stars descending.",
+    "expected_arguments": {
+      "query": "image registration",
+      "language": "Python",
+      "owner": "med-ai",
+      "archived": false,
+      "stars_min": 300,
+      "created_after": "2020-01-01",
+      "created_before": "2023-12-31",
+      "limit": 10,
+      "sort": "stars_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "owner",
+      "archived",
+      "stars_min",
+      "created_after",
+      "created_before",
+      "limit",
+      "sort"
+    ],
+    "irrelevant_parameter": "topic",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R30",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find up to 18 TypeScript repositories about workflow orchestration owned by platform-team, between 40 and 900 stars, excluding forks.",
+    "expected_arguments": {
+      "query": "workflow orchestration",
+      "language": "TypeScript",
+      "owner": "platform-team",
+      "stars_min": 40,
+      "stars_max": 900,
+      "include_forks": false,
+      "limit": 18
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "owner",
+      "stars_min",
+      "stars_max",
+      "include_forks",
+      "limit"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R31",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find non-archived Rust repositories about embedded security created after 2022-01-01, with at least 120 stars, sorted newest-created first.",
+    "expected_arguments": {
+      "query": "embedded security",
+      "language": "Rust",
+      "archived": false,
+      "created_after": "2022-01-01",
+      "stars_min": 120,
+      "sort": "created_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "archived",
+      "created_after",
+      "stars_min",
+      "sort"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R32",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find up to 7 repositories about distributed tracing owned by observability-lab, created between 2021-01-01 and 2024-01-01, with 200–2000 stars and sorted by most recently updated.",
+    "expected_arguments": {
+      "query": "distributed tracing",
+      "owner": "observability-lab",
+      "created_after": "2021-01-01",
+      "created_before": "2024-01-01",
+      "stars_min": 200,
+      "stars_max": 2000,
+      "sort": "updated_desc",
+      "limit": 7
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "created_after",
+      "created_before",
+      "stars_min",
+      "stars_max",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R33",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find non-archived Java repositories about fraud detection with topic machine-learning, at least 500 stars, excluding forks, and oldest creation date first.",
+    "expected_arguments": {
+      "query": "fraud detection",
+      "language": "Java",
+      "topic": "machine-learning",
+      "archived": false,
+      "stars_min": 500,
+      "include_forks": false,
+      "sort": "created_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "topic",
+      "archived",
+      "stars_min",
+      "include_forks",
+      "sort"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R34",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find up to 12 repositories about columnar storage in C++, with 100–1500 stars, created after 2019-01-01, ordered by stars ascending.",
+    "expected_arguments": {
+      "query": "columnar storage",
+      "language": "C++",
+      "stars_min": 100,
+      "stars_max": 1500,
+      "created_after": "2019-01-01",
+      "sort": "stars_asc",
+      "limit": 12
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "stars_min",
+      "stars_max",
+      "created_after",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "archived",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R35",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find non-archived repositories about privacy-preserving analytics owned by privacy-eng, created before 2024-06-01, including forks, capped at 9 and sorted by updated date.",
+    "expected_arguments": {
+      "query": "privacy-preserving analytics",
+      "owner": "privacy-eng",
+      "archived": false,
+      "created_before": "2024-06-01",
+      "include_forks": true,
+      "limit": 9,
+      "sort": "updated_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "archived",
+      "created_before",
+      "include_forks",
+      "limit",
+      "sort"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R36",
+    "difficulty": "hard",
+    "category": "combined_constraints",
+    "description": "Find up to 6 Python repositories about medical image registration with 100–600 stars, created between 2020-01-01 and 2023-01-01, non-archived, and sorted by creation date ascending.",
+    "expected_arguments": {
+      "query": "medical image registration",
+      "language": "Python",
+      "stars_min": 100,
+      "stars_max": 600,
+      "created_after": "2020-01-01",
+      "created_before": "2023-01-01",
+      "archived": false,
+      "limit": 6,
+      "sort": "created_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "stars_min",
+      "stars_max",
+      "created_after",
+      "created_before",
+      "archived",
+      "limit",
+      "sort"
+    ],
+    "irrelevant_parameter": "topic",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  }
+]

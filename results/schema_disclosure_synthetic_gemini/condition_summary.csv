@@ -1,0 +1,5 @@
+condition,trials,successful_trials,success_rate,schema_valid_rate,argument_correct_rate,mean_input_tokens,mean_output_tokens,mean_latency_ms
+full,324,234,72.22,100.0,72.22,435.28,50.29,4326.33
+minimal_relevant,324,197,60.8,100.0,60.8,109.53,48.25,3639.54
+relevant_only,324,246,75.93,100.0,75.93,203.4,50.01,4223.52
+relevant_plus_one_irrelevant,324,253,78.09,100.0,78.09,230.47,50.01,4113.97

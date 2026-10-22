@@ -1,0 +1,84 @@
+{
+  "name": "query_database",
+  "description": "Retrieve database records from a table with field selection, status and region filters, numeric ranges, temporal filters, sorting, and result limits.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "table": {
+        "type": "string",
+        "description": "Name of the database table to query."
+      },
+      "select": {
+        "type": "array",
+        "description": "Fields to return in each record.",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1
+      },
+      "status": {
+        "type": "string",
+        "description": "Filter records by status, such as failed or completed."
+      },
+      "region": {
+        "type": "string",
+        "description": "Filter records by geographic or business region."
+      },
+      "min_amount": {
+        "type": "number",
+        "description": "Minimum amount, inclusive."
+      },
+      "max_amount": {
+        "type": "number",
+        "description": "Maximum amount, inclusive."
+      },
+      "created_after": {
+        "type": "string",
+        "description": "Lower bound for record creation time, in ISO-8601 format.",
+        "format": "date-time"
+      },
+      "created_before": {
+        "type": "string",
+        "description": "Upper bound for record creation time, in ISO-8601 format.",
+        "format": "date-time"
+      },
+      "descending": {
+        "type": "boolean",
+        "description": "Whether records should be ordered newest first or in descending order."
+      },
+      "limit": {
+        "type": "integer",
+        "description": "Maximum number of records to return.",
+        "minimum": 1,
+        "maximum": 1000
+      },
+      "offset": {
+        "type": "integer",
+        "description": "Number of records to skip before returning results.",
+        "minimum": 0
+      },
+      "group_by": {
+        "type": "array",
+        "description": "Fields used to group records.",
+        "items": {
+          "type": "string"
+        },
+        "minItems": 1
+      },
+      "distinct": {
+        "type": "boolean",
+        "description": "Whether duplicate result rows should be removed."
+      },
+      "include_nulls": {
+        "type": "boolean",
+        "description": "Whether records containing null values should be included."
+      }
+    },
+    "required": [
+      "table"
+    ],
+    "additionalProperties": false
+  }
+}
+
+

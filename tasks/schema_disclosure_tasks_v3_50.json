@@ -1,0 +1,1233 @@
+[
+  {
+    "id": "N01",
+    "difficulty": "easy",
+    "category": "single_parameter",
+    "description": "Find AUTH_FAILURES issues.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES"
+    },
+    "schema_dependencies": [
+      "parameter_description"
+    ],
+    "relevant_parameters": [
+      "q"
+    ],
+    "irrelevant_parameter": "assignee"
+  },
+  {
+    "id": "N02",
+    "difficulty": "easy",
+    "category": "enum",
+    "description": "Find AUTH_FAILURES issues that are open.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state"
+    ],
+    "irrelevant_parameter": "limit"
+  },
+  {
+    "id": "N03",
+    "difficulty": "easy",
+    "category": "assignee",
+    "description": "Find AUTH_FAILURES issues assigned to alice.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "assignee": "alice"
+    },
+    "schema_dependencies": [
+      "parameter_description"
+    ],
+    "relevant_parameters": [
+      "q",
+      "assignee"
+    ],
+    "irrelevant_parameter": "with_comments"
+  },
+  {
+    "id": "N04",
+    "difficulty": "easy",
+    "category": "boolean",
+    "description": "Find AUTH_FAILURES issues and include their comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "q",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "state"
+  },
+  {
+    "id": "N05",
+    "difficulty": "easy",
+    "category": "limit",
+    "description": "Find AUTH_FAILURES issues and return at most 10.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "limit": 10
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "limit"
+    ],
+    "irrelevant_parameter": "sort"
+  },
+  {
+    "id": "N06",
+    "difficulty": "easy",
+    "category": "labels",
+    "description": "Find AUTH_FAILURES issues with the SECURITY label.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "labels": [
+        "SECURITY"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "q",
+      "labels"
+    ],
+    "irrelevant_parameter": "assignee"
+  },
+  {
+    "id": "N07",
+    "difficulty": "medium",
+    "category": "sorting",
+    "description": "Find AUTH_FAILURES issues sorted by newest creation date first.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ],
+    "relevant_parameters": [
+      "q",
+      "sort"
+    ],
+    "irrelevant_parameter": "with_comments"
+  },
+  {
+    "id": "N08",
+    "difficulty": "medium",
+    "category": "multi_parameter",
+    "description": "Find closed AUTH_FAILURES issues assigned to bob.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "assignee": "bob"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "assignee"
+    ],
+    "irrelevant_parameter": "limit"
+  },
+  {
+    "id": "N09",
+    "difficulty": "medium",
+    "category": "multi_parameter",
+    "description": "Find open AUTH_FAILURES issues with the SECURITY label and include comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open",
+      "labels": [
+        "SECURITY"
+      ],
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "labels",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "assignee"
+  },
+  {
+    "id": "N10",
+    "difficulty": "medium",
+    "category": "sorting",
+    "description": "Find AUTH_FAILURES issues sorted by oldest update first.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "updated_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ],
+    "relevant_parameters": [
+      "q",
+      "sort"
+    ],
+    "irrelevant_parameter": "limit"
+  },
+  {
+    "id": "N11",
+    "difficulty": "medium",
+    "category": "limit",
+    "description": "Find in-progress AUTH_FAILURES issues and return at most 25.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "in_progress",
+      "limit": 25
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "limit"
+    ],
+    "irrelevant_parameter": "labels"
+  },
+  {
+    "id": "N12",
+    "difficulty": "medium",
+    "category": "multi_parameter",
+    "description": "Find AUTH_FAILURES issues assigned to carol, sorted by most recently updated, with comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "assignee": "carol",
+      "sort": "updated_desc",
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type"
+    ],
+    "relevant_parameters": [
+      "q",
+      "assignee",
+      "sort",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "state"
+  },
+  {
+    "id": "N13",
+    "difficulty": "medium",
+    "category": "labels",
+    "description": "Find AUTH_FAILURES issues that have both SECURITY and P1 labels.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "labels": [
+        "SECURITY",
+        "P1"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "q",
+      "labels"
+    ],
+    "irrelevant_parameter": "sort"
+  },
+  {
+    "id": "N14",
+    "difficulty": "medium",
+    "category": "sorting",
+    "description": "Find closed AUTH_FAILURES issues sorted by oldest creation date first.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "sort": "created_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "sort"
+    ],
+    "irrelevant_parameter": "assignee"
+  },
+  {
+    "id": "N15",
+    "difficulty": "medium",
+    "category": "limit",
+    "description": "Find AUTH_FAILURES issues assigned to diana and return at most 50.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "assignee": "diana",
+      "limit": 50
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "assignee",
+      "limit"
+    ],
+    "irrelevant_parameter": "with_comments"
+  },
+  {
+    "id": "N16",
+    "difficulty": "medium",
+    "category": "boolean",
+    "description": "Find closed AUTH_FAILURES issues without including comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "with_comments": false
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "limit"
+  },
+  {
+    "id": "N17",
+    "difficulty": "medium",
+    "category": "temporal_filter",
+    "description": "Find AUTH_FAILURES issues created after January 1, 2025, at midnight UTC.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "created_after": "2025-01-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description"
+    ],
+    "relevant_parameters": [
+      "q",
+      "created_after"
+    ],
+    "irrelevant_parameter": "state"
+  },
+  {
+    "id": "N18",
+    "difficulty": "medium",
+    "category": "temporal_filter",
+    "description": "Find AUTH_FAILURES issues created before July 1, 2025, at midnight UTC.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "created_before": "2025-07-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description"
+    ],
+    "relevant_parameters": [
+      "q",
+      "created_before"
+    ],
+    "irrelevant_parameter": "assignee"
+  },
+  {
+    "id": "N19",
+    "difficulty": "hard",
+    "category": "temporal_filter",
+    "description": "Find open AUTH_FAILURES issues created from January 1, 2025, through June 30, 2025, using UTC timestamps.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open",
+      "created_after": "2025-01-01T00:00:00Z",
+      "created_before": "2025-06-30T23:59:59Z"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "created_after",
+      "created_before"
+    ],
+    "irrelevant_parameter": "limit"
+  },
+  {
+    "id": "N20",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find open AUTH_FAILURES issues assigned to alice, labeled SECURITY, sorted by newest update, limited to 20, and include comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "open",
+      "assignee": "alice",
+      "labels": [
+        "SECURITY"
+      ],
+      "sort": "updated_desc",
+      "limit": 20,
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "assignee",
+      "labels",
+      "sort",
+      "limit",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "created_after"
+  },
+  {
+    "id": "N21",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find closed AUTH_FAILURES issues assigned to bob, labeled BUG and REGRESSION, sorted by oldest update, limited to 15, without comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "assignee": "bob",
+      "labels": [
+        "BUG",
+        "REGRESSION"
+      ],
+      "sort": "updated_asc",
+      "limit": 15,
+      "with_comments": false
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "assignee",
+      "labels",
+      "sort",
+      "limit",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "created_before"
+  },
+  {
+    "id": "N22",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find in-progress AUTH_FAILURES issues created after January 1, 2025, assigned to carol, and sorted by oldest creation date.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "in_progress",
+      "created_after": "2025-01-01T00:00:00Z",
+      "assignee": "carol",
+      "sort": "created_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "created_after",
+      "assignee",
+      "sort"
+    ],
+    "irrelevant_parameter": "with_comments"
+  },
+  {
+    "id": "N23",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find AUTH_FAILURES issues labeled SECURITY, created before July 1, 2025, sorted by newest creation date, and limited to 30.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "labels": [
+        "SECURITY"
+      ],
+      "created_before": "2025-07-01T00:00:00Z",
+      "sort": "created_desc",
+      "limit": 30
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "labels",
+      "created_before",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "state"
+  },
+  {
+    "id": "N24",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find closed AUTH_FAILURES issues assigned to diana, created after January 1, 2025, labeled SECURITY and P1, sorted by oldest update, limited to 40, and include comments.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "closed",
+      "assignee": "diana",
+      "created_after": "2025-01-01T00:00:00Z",
+      "labels": [
+        "SECURITY",
+        "P1"
+      ],
+      "sort": "updated_asc",
+      "limit": 40,
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "assignee",
+      "created_after",
+      "labels",
+      "sort",
+      "limit",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "created_before"
+  },
+  {
+    "id": "N25",
+    "difficulty": "medium",
+    "category": "enum",
+    "description": "Find AUTH_FAILURES issues sorted by oldest creation date first.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "sort": "created_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ],
+    "relevant_parameters": [
+      "q",
+      "sort"
+    ],
+    "irrelevant_parameter": "state"
+  },
+  {
+    "id": "N26",
+    "difficulty": "medium",
+    "category": "enum",
+    "description": "Find AUTH_FAILURES issues that are in progress.",
+    "expected_arguments": {
+      "q": "AUTH_FAILURES",
+      "state": "in_progress"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state"
+    ],
+    "irrelevant_parameter": "with_comments"
+  },
+  {
+    "id": "N27",
+    "difficulty": "medium",
+    "category": "assignee",
+    "description": "Find SECURITY issues assigned to erin.",
+    "expected_arguments": {
+      "q": "SECURITY",
+      "assignee": "erin"
+    },
+    "schema_dependencies": [
+      "parameter_description"
+    ],
+    "relevant_parameters": [
+      "q",
+      "assignee"
+    ],
+    "irrelevant_parameter": "sort"
+  },
+  {
+    "id": "N28",
+    "difficulty": "medium",
+    "category": "labels",
+    "description": "Find issues matching DATABASE_ERRORS with the DATABASE and P1 labels.",
+    "expected_arguments": {
+      "q": "DATABASE_ERRORS",
+      "labels": [
+        "DATABASE",
+        "P1"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "q",
+      "labels"
+    ],
+    "irrelevant_parameter": "limit"
+  },
+  {
+    "id": "N29",
+    "difficulty": "medium",
+    "category": "limit",
+    "description": "Find MEMORY_LEAK issues and return at most 75.",
+    "expected_arguments": {
+      "q": "MEMORY_LEAK",
+      "limit": 75
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "limit"
+    ],
+    "irrelevant_parameter": "assignee"
+  },
+  {
+    "id": "N30",
+    "difficulty": "medium",
+    "category": "temporal_filter",
+    "description": "Find DATABASE_ERRORS issues created after March 1, 2025, at midnight UTC.",
+    "expected_arguments": {
+      "q": "DATABASE_ERRORS",
+      "created_after": "2025-03-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description"
+    ],
+    "relevant_parameters": [
+      "q",
+      "created_after"
+    ],
+    "irrelevant_parameter": "with_comments"
+  },
+  {
+    "id": "N31",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find open MEMORY_LEAK issues assigned to erin, labeled BUG, sorted by newest creation date, limited to 12, and include comments.",
+    "expected_arguments": {
+      "q": "MEMORY_LEAK",
+      "state": "open",
+      "assignee": "erin",
+      "labels": [
+        "BUG"
+      ],
+      "sort": "created_desc",
+      "limit": 12,
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "assignee",
+      "labels",
+      "sort",
+      "limit",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "created_before"
+  },
+  {
+    "id": "N32",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find closed DATABASE_ERRORS issues assigned to frank, created before July 1, 2025, sorted by oldest update, limited to 35, without comments.",
+    "expected_arguments": {
+      "q": "DATABASE_ERRORS",
+      "state": "closed",
+      "assignee": "frank",
+      "created_before": "2025-07-01T00:00:00Z",
+      "sort": "updated_asc",
+      "limit": 35,
+      "with_comments": false
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "assignee",
+      "created_before",
+      "sort",
+      "limit",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "labels"
+  },
+  {
+    "id": "N33",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find in-progress SECURITY issues assigned to alice, created after January 1, 2025, labeled SECURITY and REGRESSION, sorted by newest update, and limited to 60.",
+    "expected_arguments": {
+      "q": "SECURITY",
+      "state": "in_progress",
+      "assignee": "alice",
+      "created_after": "2025-01-01T00:00:00Z",
+      "labels": [
+        "SECURITY",
+        "REGRESSION"
+      ],
+      "sort": "updated_desc",
+      "limit": 60
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "assignee",
+      "created_after",
+      "labels",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "with_comments"
+  },
+  {
+    "id": "N34",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find MEMORY_LEAK issues created from January 1, 2025, through June 30, 2025, labeled P1, sorted by oldest creation date, limited to 45, and include comments.",
+    "expected_arguments": {
+      "q": "MEMORY_LEAK",
+      "created_after": "2025-01-01T00:00:00Z",
+      "created_before": "2025-06-30T23:59:59Z",
+      "labels": [
+        "P1"
+      ],
+      "sort": "created_asc",
+      "limit": 45,
+      "with_comments": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "created_after",
+      "created_before",
+      "labels",
+      "sort",
+      "limit",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "assignee"
+  },
+  {
+    "id": "N35",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find open DATABASE_ERRORS issues assigned to frank, created after January 1, 2025, labeled DATABASE and P1, sorted by oldest update, limited to 18, without comments.",
+    "expected_arguments": {
+      "q": "DATABASE_ERRORS",
+      "state": "open",
+      "assignee": "frank",
+      "created_after": "2025-01-01T00:00:00Z",
+      "labels": [
+        "DATABASE",
+        "P1"
+      ],
+      "sort": "updated_asc",
+      "limit": 18,
+      "with_comments": false
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "assignee",
+      "created_after",
+      "labels",
+      "sort",
+      "limit",
+      "with_comments"
+    ],
+    "irrelevant_parameter": "created_before"
+  },
+  {
+    "id": "N36",
+    "difficulty": "hard",
+    "category": "multi_parameter",
+    "description": "Find closed MEMORY_LEAK issues created before July 1, 2025, assigned to erin, labeled BUG and REGRESSION, sorted by newest creation date, limited to 22.",
+    "expected_arguments": {
+      "q": "MEMORY_LEAK",
+      "state": "closed",
+      "created_before": "2025-07-01T00:00:00Z",
+      "assignee": "erin",
+      "labels": [
+        "BUG",
+        "REGRESSION"
+      ],
+      "sort": "created_desc",
+      "limit": 22
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "enum",
+      "type",
+      "constraints"
+    ],
+    "relevant_parameters": [
+      "q",
+      "state",
+      "created_before",
+      "assignee",
+      "labels",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "with_comments"
+  },
+  {
+    "id": "R01",
+    "difficulty": "easy",
+    "category": "single_parameter",
+    "description": "Find repositories matching the term observability.",
+    "expected_arguments": {
+      "query": "observability"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R02",
+    "difficulty": "easy",
+    "category": "enum_filter",
+    "description": "Find Python repositories about observability, sorted by most recently updated.",
+    "expected_arguments": {
+      "query": "observability",
+      "language": "Python",
+      "sort": "updated_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "sort"
+    ],
+    "irrelevant_parameter": "archived",
+    "schema_path": "schemas/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R03",
+    "difficulty": "medium",
+    "category": "multi_parameter",
+    "description": "Find Rust compiler repositories owned by acme with at least 250 stars, excluding archived repositories.",
+    "expected_arguments": {
+      "query": "compiler",
+      "owner": "acme",
+      "language": "Rust",
+      "stars_min": 250,
+      "archived": false
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "language",
+      "stars_min",
+      "archived"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R04",
+    "difficulty": "medium",
+    "category": "constraint_sort",
+    "description": "Find up to 15 TypeScript repositories about accessibility, ordered by stars from highest to lowest.",
+    "expected_arguments": {
+      "query": "accessibility",
+      "language": "TypeScript",
+      "sort": "stars_desc",
+      "limit": 15
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R05",
+    "difficulty": "hard",
+    "category": "combined_filters",
+    "description": "Find up to 8 non-archived Java repositories about payment processing owned by fin-platform with at least 1000 stars, without specifying an ordering.",
+    "expected_arguments": {
+      "query": "payment processing",
+      "language": "Java",
+      "owner": "fin-platform",
+      "stars_min": 1000,
+      "archived": false,
+      "limit": 8
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "owner",
+      "stars_min",
+      "archived",
+      "limit"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "F01",
+    "difficulty": "easy",
+    "category": "single_parameter",
+    "description": "Find files whose names or contents mention migration-checklist.",
+    "expected_arguments": {
+      "query": "migration-checklist"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query"
+    ],
+    "irrelevant_parameter": "extension",
+    "schema_path": "schemas/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F02",
+    "difficulty": "easy",
+    "category": "extension_filter",
+    "description": "Find Python files mentioning retry policy under /services.",
+    "expected_arguments": {
+      "query": "retry policy",
+      "root_path": "/services",
+      "extension": "py"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F03",
+    "difficulty": "medium",
+    "category": "date_filter",
+    "description": "Find Markdown files mentioning deployment, modified on or after 2025-01-01T00:00:00Z.",
+    "expected_arguments": {
+      "query": "deployment",
+      "extension": "md",
+      "modified_after": "2025-01-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "extension",
+      "modified_after"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F04",
+    "difficulty": "medium",
+    "category": "sort_limit",
+    "description": "Find up to 12 files matching model-config under /experiments, newest modified first.",
+    "expected_arguments": {
+      "query": "model-config",
+      "root_path": "/experiments",
+      "sort": "modified_desc",
+      "limit": 12
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F05",
+    "difficulty": "hard",
+    "category": "combined_filters",
+    "description": "Find hidden-inclusive YAML files under /deploy that mention secrets, modified from 2025-02-01T00:00:00Z until before 2025-04-01T00:00:00Z, ordered oldest first.",
+    "expected_arguments": {
+      "query": "secrets",
+      "root_path": "/deploy",
+      "extension": "yaml",
+      "include_hidden": true,
+      "modified_after": "2025-02-01T00:00:00Z",
+      "modified_before": "2025-04-01T00:00:00Z",
+      "sort": "modified_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "include_hidden",
+      "modified_after",
+      "modified_before",
+      "sort"
+    ],
+    "irrelevant_parameter": "limit",
+    "schema_path": "schemas/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "D01",
+    "difficulty": "easy",
+    "category": "required_fields",
+    "description": "Return the id and status fields for orders.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "status"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D02",
+    "difficulty": "easy",
+    "category": "enum_filter",
+    "description": "Return id and amount for failed payments, with newest records first.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "id",
+        "amount"
+      ],
+      "status": "failed",
+      "descending": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "descending"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D03",
+    "difficulty": "medium",
+    "category": "range_filter",
+    "description": "Return id, customer_id, and amount for completed orders with amount from 50 through 200, capped at 40 records.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "customer_id",
+        "amount"
+      ],
+      "status": "completed",
+      "min_amount": 50,
+      "max_amount": 200,
+      "limit": 40
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "min_amount",
+      "max_amount",
+      "limit"
+    ],
+    "irrelevant_parameter": "descending",
+    "schema_path": "schemas/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D04",
+    "difficulty": "hard",
+    "category": "combined_temporal_filters",
+    "description": "Return customer_id, amount, and created_at for failed payments in the west region created from 2025-03-01T00:00:00Z until before 2025-04-01T00:00:00Z, newest first, capped at 25.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "customer_id",
+        "amount",
+        "created_at"
+      ],
+      "status": "failed",
+      "region": "west",
+      "created_after": "2025-03-01T00:00:00Z",
+      "created_before": "2025-04-01T00:00:00Z",
+      "descending": true,
+      "limit": 25
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "region",
+      "created_after",
+      "created_before",
+      "descending",
+      "limit"
+    ],
+    "irrelevant_parameter": "max_amount",
+    "schema_path": "schemas/database_query_v1.json",
+    "schema_family": "database"
+  }
+]

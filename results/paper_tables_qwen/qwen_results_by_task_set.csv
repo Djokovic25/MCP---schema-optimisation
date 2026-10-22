@@ -1,0 +1,9 @@
+task_set,condition,trials,successful_trials,task_success_%,schema_valid_%,arguments_correct_%,mean_input_tokens,mean_output_tokens,mean_latency_ms,median_latency_ms,latency_sd_ms,tool_correct_%
+new_108_tasks,full,108.0,89.0,82.41,100.0,82.41,583.69,73.26,874.12,608.11,891.68,100.0
+new_108_tasks,minimal_relevant,108.0,77.0,71.3,100.0,71.3,333.36,68.18,2594.4,602.18,8367.74,100.0
+new_108_tasks,relevant_only,108.0,100.0,92.59,100.0,92.59,418.64,70.65,852.94,592.96,932.08,100.0
+new_108_tasks,relevant_plus_one_irrelevant,108.0,97.0,89.81,100.0,89.81,449.39,71.44,941.54,579.41,967.68,100.0
+original_36_tasks,full,324.0,140.0,43.21,100.0,43.21,661.42,61.27,1026.11,605.4,1076.22,100.0
+original_36_tasks,minimal_relevant,324.0,269.0,83.02,100.0,83.02,344.77,79.67,2887.97,640.32,10094.21,100.0
+original_36_tasks,relevant_only,324.0,297.0,91.67,100.0,91.67,433.12,80.24,1111.64,654.82,1558.93,100.0
+original_36_tasks,relevant_plus_one_irrelevant,324.0,290.0,89.51,100.0,89.51,458.55,80.72,1387.3,651.55,4955.61,100.0

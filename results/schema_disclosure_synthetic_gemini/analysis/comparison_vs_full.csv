@@ -1,0 +1,4 @@
+condition,success_rate_pct,success_change_percentage_points,input_tokens_change_pct,mean_latency_change_ms,median_latency_change_ms
+minimal_relevant,60.8,-11.42,-74.84,-686.79,-56.32
+relevant_only,75.93,3.71,-53.27,-102.81,36.12
+relevant_plus_one_irrelevant,78.09,5.87,-47.05,-212.36,-268.0

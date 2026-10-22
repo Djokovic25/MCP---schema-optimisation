@@ -1,0 +1,5 @@
+condition,trials,correct_tool_rate,schema_valid_rate,correct_arguments_rate,task_success_rate
+full,324,100.0,100.0,72.22,72.22
+minimal_relevant,324,100.0,100.0,60.8,60.8
+relevant_only,324,100.0,100.0,75.93,75.93
+relevant_plus_one_irrelevant,324,100.0,100.0,78.09,78.09

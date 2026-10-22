@@ -1,0 +1,5 @@
+condition,failure_type,count,pct_of_condition_trials
+full,arguments_incorrect,90,27.78
+minimal_relevant,arguments_incorrect,127,39.2
+relevant_only,arguments_incorrect,78,24.07
+relevant_plus_one_irrelevant,arguments_incorrect,71,21.91

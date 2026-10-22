@@ -1,0 +1,79 @@
+
+
+
+
+
+{
+  "name": "search_repositories",
+  "description": "Search repositories by keywords and filter them by language, topic, owner, stars, archive status, and creation date.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "query": {
+        "type": "string",
+        "description": "Keywords or phrases to search for in repository names and descriptions."
+      },
+      "language": {
+        "type": "string",
+        "description": "Programming language of the repository."
+      },
+      "topic": {
+        "type": "string",
+        "description": "Topic associated with the repository."
+      },
+      "owner": {
+        "type": "string",
+        "description": "Repository owner or organization."
+      },
+      "stars_min": {
+        "type": "integer",
+        "description": "Minimum number of stars.",
+        "minimum": 0
+      },
+      "stars_max": {
+        "type": "integer",
+        "description": "Maximum number of stars.",
+        "minimum": 0
+      },
+      "archived": {
+        "type": "boolean",
+        "description": "Whether to include archived repositories. Set false to exclude archived repositories."
+      },
+      "created_after": {
+        "type": "string",
+        "description": "Lower bound for repository creation date, in YYYY-MM-DD format.",
+        "format": "date"
+      },
+      "created_before": {
+        "type": "string",
+        "description": "Upper bound for repository creation date, in YYYY-MM-DD format.",
+        "format": "date"
+      },
+      "sort": {
+        "type": "string",
+        "description": "Ordering of the search results.",
+        "enum": [
+          "stars_desc",
+          "stars_asc",
+          "created_desc",
+          "created_asc",
+          "updated_desc"
+        ]
+      },
+      "limit": {
+        "type": "integer",
+        "description": "Maximum number of repositories to return.",
+        "minimum": 1,
+        "maximum": 100
+      },
+      "include_forks": {
+        "type": "boolean",
+        "description": "Whether forked repositories should be included."
+      }
+    },
+    "required": [
+      "query"
+    ],
+    "additionalProperties": false
+  }
+}

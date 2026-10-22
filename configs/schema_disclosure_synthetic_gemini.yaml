@@ -1,0 +1,21 @@
+experiment:
+  name: schema_disclosure_synthetic_gemini
+
+model:
+  name: gemini-3.1-flash-lite
+
+tasks:
+  path: tasks/synthetic_tasks_v1_108.json
+conditions:
+  - name: full
+  - name: relevant_only
+  - name: relevant_plus_one_irrelevant
+  - name: minimal_relevant
+
+execution:
+  repetitions: 3
+  delay_seconds: 5
+  max_calls: 1296
+
+output:
+  directory: results/schema_disclosure_synthetic_gemini

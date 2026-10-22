@@ -1,0 +1,368 @@
+[
+  {
+    "id": "R01",
+    "difficulty": "easy",
+    "category": "single_parameter",
+    "description": "Find repositories matching the term observability.",
+    "expected_arguments": {
+      "query": "observability"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query"
+    ],
+    "irrelevant_parameter": "language",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R02",
+    "difficulty": "easy",
+    "category": "enum_filter",
+    "description": "Find Python repositories about observability, sorted by most recently updated.",
+    "expected_arguments": {
+      "query": "observability",
+      "language": "Python",
+      "sort": "updated_desc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "sort"
+    ],
+    "irrelevant_parameter": "archived",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R03",
+    "difficulty": "medium",
+    "category": "multi_parameter",
+    "description": "Find Rust compiler repositories owned by acme with at least 250 stars, excluding archived repositories.",
+    "expected_arguments": {
+      "query": "compiler",
+      "owner": "acme",
+      "language": "Rust",
+      "stars_min": 250,
+      "archived": false
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "owner",
+      "language",
+      "stars_min",
+      "archived"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R04",
+    "difficulty": "medium",
+    "category": "constraint_sort",
+    "description": "Find up to 15 TypeScript repositories about accessibility, ordered by stars from highest to lowest.",
+    "expected_arguments": {
+      "query": "accessibility",
+      "language": "TypeScript",
+      "sort": "stars_desc",
+      "limit": 15
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "owner",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "R05",
+    "difficulty": "hard",
+    "category": "combined_filters",
+    "description": "Find up to 8 non-archived Java repositories about payment processing owned by fin-platform with at least 1000 stars, without specifying an ordering.",
+    "expected_arguments": {
+      "query": "payment processing",
+      "language": "Java",
+      "owner": "fin-platform",
+      "stars_min": 1000,
+      "archived": false,
+      "limit": 8
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "language",
+      "owner",
+      "stars_min",
+      "archived",
+      "limit"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/repository_search_v1.json",
+    "schema_family": "repository"
+  },
+  {
+    "id": "F01",
+    "difficulty": "easy",
+    "category": "single_parameter",
+    "description": "Find files whose names or contents mention migration-checklist.",
+    "expected_arguments": {
+      "query": "migration-checklist"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query"
+    ],
+    "irrelevant_parameter": "extension",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F02",
+    "difficulty": "easy",
+    "category": "extension_filter",
+    "description": "Find Python files mentioning retry policy under /services.",
+    "expected_arguments": {
+      "query": "retry policy",
+      "root_path": "/services",
+      "extension": "py"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F03",
+    "difficulty": "medium",
+    "category": "date_filter",
+    "description": "Find Markdown files mentioning deployment, modified on or after 2025-01-01T00:00:00Z.",
+    "expected_arguments": {
+      "query": "deployment",
+      "extension": "md",
+      "modified_after": "2025-01-01T00:00:00Z"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "extension",
+      "modified_after"
+    ],
+    "irrelevant_parameter": "sort",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F04",
+    "difficulty": "medium",
+    "category": "sort_limit",
+    "description": "Find up to 12 files matching model-config under /experiments, newest modified first.",
+    "expected_arguments": {
+      "query": "model-config",
+      "root_path": "/experiments",
+      "sort": "modified_desc",
+      "limit": 12
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "sort",
+      "limit"
+    ],
+    "irrelevant_parameter": "include_hidden",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "F05",
+    "difficulty": "hard",
+    "category": "combined_filters",
+    "description": "Find hidden-inclusive YAML files under /deploy that mention secrets, modified from 2025-02-01T00:00:00Z until before 2025-04-01T00:00:00Z, ordered oldest first.",
+    "expected_arguments": {
+      "query": "secrets",
+      "root_path": "/deploy",
+      "extension": "yaml",
+      "include_hidden": true,
+      "modified_after": "2025-02-01T00:00:00Z",
+      "modified_before": "2025-04-01T00:00:00Z",
+      "sort": "modified_asc"
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "query",
+      "root_path",
+      "extension",
+      "include_hidden",
+      "modified_after",
+      "modified_before",
+      "sort"
+    ],
+    "irrelevant_parameter": "limit",
+    "schema_path": "schemas/synthetic/file_search_v1.json",
+    "schema_family": "files"
+  },
+  {
+    "id": "D01",
+    "difficulty": "easy",
+    "category": "required_fields",
+    "description": "Return the id and status fields for orders.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "status"
+      ]
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D02",
+    "difficulty": "easy",
+    "category": "enum_filter",
+    "description": "Return id and amount for failed payments, with newest records first.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "id",
+        "amount"
+      ],
+      "status": "failed",
+      "descending": true
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "descending"
+    ],
+    "irrelevant_parameter": "region",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D03",
+    "difficulty": "medium",
+    "category": "range_filter",
+    "description": "Return id, customer_id, and amount for completed orders with amount from 50 through 200, capped at 40 records.",
+    "expected_arguments": {
+      "table": "orders",
+      "select": [
+        "id",
+        "customer_id",
+        "amount"
+      ],
+      "status": "completed",
+      "min_amount": 50,
+      "max_amount": 200,
+      "limit": 40
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "min_amount",
+      "max_amount",
+      "limit"
+    ],
+    "irrelevant_parameter": "descending",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  },
+  {
+    "id": "D04",
+    "difficulty": "hard",
+    "category": "combined_temporal_filters",
+    "description": "Return customer_id, amount, and created_at for failed payments in the west region created from 2025-03-01T00:00:00Z until before 2025-04-01T00:00:00Z, newest first, capped at 25.",
+    "expected_arguments": {
+      "table": "payments",
+      "select": [
+        "customer_id",
+        "amount",
+        "created_at"
+      ],
+      "status": "failed",
+      "region": "west",
+      "created_after": "2025-03-01T00:00:00Z",
+      "created_before": "2025-04-01T00:00:00Z",
+      "descending": true,
+      "limit": 25
+    },
+    "schema_dependencies": [
+      "parameter_description",
+      "type"
+    ],
+    "relevant_parameters": [
+      "table",
+      "select",
+      "status",
+      "region",
+      "created_after",
+      "created_before",
+      "descending",
+      "limit"
+    ],
+    "irrelevant_parameter": "max_amount",
+    "schema_path": "schemas/synthetic/database_query_v1.json",
+    "schema_family": "database"
+  }
+]

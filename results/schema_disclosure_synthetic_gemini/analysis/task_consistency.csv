@@ -1,0 +1,17 @@
+condition,successes,number_of_tasks
+full,0,22
+full,1,9
+full,2,6
+full,3,71
+minimal_relevant,0,32
+minimal_relevant,1,10
+minimal_relevant,2,11
+minimal_relevant,3,55
+relevant_only,0,17
+relevant_only,1,11
+relevant_only,2,5
+relevant_only,3,75
+relevant_plus_one_irrelevant,0,19
+relevant_plus_one_irrelevant,1,4
+relevant_plus_one_irrelevant,2,6
+relevant_plus_one_irrelevant,3,79
